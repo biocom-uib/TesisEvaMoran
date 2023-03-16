@@ -10,6 +10,7 @@ fig:9
 fig:10
 fig:11
 fig:12
+fig:sint
 fig:13
 fig:14
 fig:15
