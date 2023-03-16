@@ -506,6 +506,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas"><i class="fa fa-check"></i><b>7.1.1</b> Infectadas</a></li>
 <li class="chapter" data-level="7.1.2" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas"><i class="fa fa-check"></i><b>7.1.2</b> No infectadas</a></li>
 <li class="chapter" data-level="7.1.3" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias"><i class="fa fa-check"></i><b>7.1.3</b> Diferencias?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="grupos-robson.html"><a href="grupos-robson.html#grupos-sintomáticos"><i class="fa fa-check"></i><b>7.1.4</b> Grupos sintomáticos</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="grupos-robson.html"><a href="grupos-robson.html#a-ola"><i class="fa fa-check"></i><b>7.2</b> 1<sup>a</sup> ola</a>
 <ul>
@@ -6228,6 +6229,7 @@ Figura 1.17:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y el hábito tabáquico: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.471</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.5322</p></li>
+<li><p>Potencia del test: 0.179</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-obesidad" class="section level3 hasAnchor" number="1.4.5">
@@ -6366,6 +6368,7 @@ Figura 1.18:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y la obesidad: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.008</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.0377</p></li>
+<li><p>Potencia del test: 0.805</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-hipertensión-pregestacional" class="section level3 hasAnchor" number="1.4.6">
@@ -6504,6 +6507,7 @@ Figura 1.19:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y la HTA: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.268</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.2804</p></li>
+<li><p>Potencia del test: 0.287</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-diabetes" class="section level3 hasAnchor" number="1.4.7">
@@ -6642,6 +6646,7 @@ Figura 1.20:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y la diabetes: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.403</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.4185</p></li>
+<li><p>Potencia del test: 0.208</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-cardiopatía" class="section level3 hasAnchor" number="1.4.8">
@@ -6780,6 +6785,7 @@ Figura 1.21:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y ECC: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor 0.187</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.2058</p></li>
+<li><p>Potencia del test: 0.346</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-enfermedad-pulmonar-crónica" class="section level3 hasAnchor" number="1.4.9">
@@ -6922,6 +6928,7 @@ Figura 1.22:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y EPC: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.009</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.0133</p></li>
+<li><p>Potencia del test: 0.792</p></li>
 </ul>
 </div>
 <div id="sintomatologia-vs-gestación-múltiple" class="section level3 hasAnchor" number="1.4.10">
@@ -7060,6 +7067,7 @@ Figura 1.23:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y gestación múltiple: test <span class="math inline">\(\chi^2\)</span> , p-valor 0.09</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.0983</p></li>
+<li><p>Potencia del test: 0.488</p></li>
 </ul>
 </div>
 <div id="sintomatologia-vs-paridad" class="section level3 hasAnchor" number="1.4.11">
@@ -7198,6 +7206,7 @@ Figura 1.24:
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y paridad: test <span class="math inline">\(\chi^2\)</span> , p-valor 0.013</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.1246</p></li>
+<li><p>Potencia del test: 0.752</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-anomalía-congénita" class="section level3 hasAnchor" number="1.4.12">
@@ -7327,15 +7336,16 @@ Total
 </table>
 </div>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="descripción-de-la-muestra-global.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Barplot.DGS</span>(Casos<span class="sc">$</span>Diagnóstico.de.malformación.ecográfica._.semana.<span class="fl">20.</span>_,<span class="st">&quot;Anomalías congénitas&quot;</span>, <span class="st">&quot;No anomalías congénitas&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center">
-<img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/24%20-1.png" alt="\s" width="50%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:24"></span>
+<img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/24-1.png" alt="\s" width="50%" />
 <p class="caption">
-(#fig:24 )
+Figura 1.25: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y anomalía congénita: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor 0.492</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.4661</p></li>
+<li><p>Potencia del test: 0.186</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-retraso-del-crecimiento-intrauterino" class="section level3 hasAnchor" number="1.4.13">
@@ -7468,12 +7478,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:25"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/25-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.25: 
+Figura 1.26: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y retraso del crecimiento intrauterino : test <span class="math inline">\(\chi^2\)</span>, p-valor 0.289</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.3147</p></li>
+<li><p>Potencia del test: 0.272</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-diabetes-gestacional" class="section level3 hasAnchor" number="1.4.14">
@@ -7606,12 +7617,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:26"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/26-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.26: 
+Figura 1.27: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y diabetes gestacional: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.827</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.8497</p></li>
+<li><p>Potencia del test: 0.08</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-hipertensión-gestacional" class="section level3 hasAnchor" number="1.4.15">
@@ -7744,12 +7756,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:27"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/27-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.27: 
+Figura 1.28: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología e hipertensión gestacional: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.884</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.889</p></li>
+<li><p>Potencia del test: 0.069</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-rotura-prematura-de-membranas" class="section level3 hasAnchor" number="1.4.16">
@@ -7882,12 +7895,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:28"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/28-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.28: 
+Figura 1.29: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y rotura prematura de membranas: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.044</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.1963</p></li>
+<li><p>Potencia del test: 0.602</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-preeclampsia" class="section level3 hasAnchor" number="1.4.17">
@@ -8021,12 +8035,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:29"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/29-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.29: 
+Figura 1.30: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y preeclampsia: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.864</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.8768</p></li>
+<li><p>Potencia del test: 0.073</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-preeclampsia-con-criterios-de-gravedad" class="section level3 hasAnchor" number="1.4.18">
@@ -8038,16 +8053,16 @@ Figura 1.29:
 <span id="cb116-5"><a href="descripción-de-la-muestra-global.html#cb116-5" aria-hidden="true" tabindex="-1"></a>taula<span class="ot">=</span><span class="fu">table</span>(DF)[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>),<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
 <span id="cb116-6"><a href="descripción-de-la-muestra-global.html#cb116-6" aria-hidden="true" tabindex="-1"></a>proptaula<span class="ot">=</span><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(taula,<span class="at">margin=</span><span class="dv">2</span>),<span class="dv">2</span>)</span>
 <span id="cb116-7"><a href="descripción-de-la-muestra-global.html#cb116-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-8"><a href="descripción-de-la-muestra-global.html#cb116-8" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">cbind</span>(<span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]),n_AS<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]))),</span>
-<span id="cb116-9"><a href="descripción-de-la-muestra-global.html#cb116-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]),n_AS<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>])))<span class="sc">/</span>n_AS,<span class="dv">2</span>),</span>
-<span id="cb116-10"><a href="descripción-de-la-muestra-global.html#cb116-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]),n_SL<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]))),</span>
-<span id="cb116-11"><a href="descripción-de-la-muestra-global.html#cb116-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]),n_SL<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>])))<span class="sc">/</span>n_SL,<span class="dv">2</span>),</span>
-<span id="cb116-12"><a href="descripción-de-la-muestra-global.html#cb116-12" aria-hidden="true" tabindex="-1"></a>             <span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]),n_NE<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]))),</span>
-<span id="cb116-13"><a href="descripción-de-la-muestra-global.html#cb116-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]),n_NE<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>])))<span class="sc">/</span>n_NE,<span class="dv">2</span>)</span>
+<span id="cb116-8"><a href="descripción-de-la-muestra-global.html#cb116-8" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">cbind</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]),</span>
+<span id="cb116-9"><a href="descripción-de-la-muestra-global.html#cb116-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">1</span>])),<span class="dv">2</span>),</span>
+<span id="cb116-10"><a href="descripción-de-la-muestra-global.html#cb116-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]),</span>
+<span id="cb116-11"><a href="descripción-de-la-muestra-global.html#cb116-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">2</span>])),<span class="dv">2</span>),</span>
+<span id="cb116-12"><a href="descripción-de-la-muestra-global.html#cb116-12" aria-hidden="true" tabindex="-1"></a>             <span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]),</span>
+<span id="cb116-13"><a href="descripción-de-la-muestra-global.html#cb116-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">3</span>])),<span class="dv">2</span>)</span>
 <span id="cb116-14"><a href="descripción-de-la-muestra-global.html#cb116-14" aria-hidden="true" tabindex="-1"></a>           )</span>
-<span id="cb116-15"><a href="descripción-de-la-muestra-global.html#cb116-15" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">rbind</span>(EEExt,<span class="fu">c</span>(n_AS,<span class="dv">100</span>,n_SL,<span class="dv">100</span>,n_NE,<span class="dv">100</span>))</span>
+<span id="cb116-15"><a href="descripción-de-la-muestra-global.html#cb116-15" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">rbind</span>(EEExt)</span>
 <span id="cb116-16"><a href="descripción-de-la-muestra-global.html#cb116-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-17"><a href="descripción-de-la-muestra-global.html#cb116-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(EEExt)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;PE con CG&quot;</span>, <span class="st">&quot;PE sin CG&quot;</span>,<span class="st">&quot;Pérdidas&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb116-17"><a href="descripción-de-la-muestra-global.html#cb116-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(EEExt)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;PE con CG&quot;</span>, <span class="st">&quot;PE sin CG&quot;</span>)</span>
 <span id="cb116-18"><a href="descripción-de-la-muestra-global.html#cb116-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(EEExt)<span class="ot">=</span>Columnes.Sint</span>
 <span id="cb116-19"><a href="descripción-de-la-muestra-global.html#cb116-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb116-20"><a href="descripción-de-la-muestra-global.html#cb116-20" aria-hidden="true" tabindex="-1"></a>EEExt <span class="sc">%&gt;%</span></span>
@@ -8089,19 +8104,19 @@ PE con CG
 9
 </td>
 <td style="text-align:right;">
-1.21
+25
 </td>
 <td style="text-align:right;">
 13
 </td>
 <td style="text-align:right;">
-2.02
+37.14
 </td>
 <td style="text-align:right;">
 8
 </td>
 <td style="text-align:right;">
-2.86
+53.33
 </td>
 </tr>
 <tr>
@@ -8112,65 +8127,19 @@ PE sin CG
 27
 </td>
 <td style="text-align:right;">
-3.62
+75
 </td>
 <td style="text-align:right;">
 22
 </td>
 <td style="text-align:right;">
-3.42
+62.86
 </td>
 <td style="text-align:right;">
 7
 </td>
 <td style="text-align:right;">
-2.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pérdidas
-</td>
-<td style="text-align:right;">
-709
-</td>
-<td style="text-align:right;">
-95.17
-</td>
-<td style="text-align:right;">
-608
-</td>
-<td style="text-align:right;">
-94.56
-</td>
-<td style="text-align:right;">
-265
-</td>
-<td style="text-align:right;">
-94.64
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total
-</td>
-<td style="text-align:right;">
-745
-</td>
-<td style="text-align:right;">
-100.00
-</td>
-<td style="text-align:right;">
-643
-</td>
-<td style="text-align:right;">
-100.00
-</td>
-<td style="text-align:right;">
-280
-</td>
-<td style="text-align:right;">
-100.00
+46.67
 </td>
 </tr>
 </tbody>
@@ -8189,12 +8158,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:30"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/30-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.30: 
+Figura 1.31: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y preeclampsia con CG en preeclampsia: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.158</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.4069</p></li>
+<li><p>Potencia del test: 0.404</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-eventos-hemorrágicos" class="section level3 hasAnchor" number="1.4.19">
@@ -8327,12 +8297,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:31"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/31-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.31: 
+Figura 1.32: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y evento hemorrágico: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.017</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.0269</p></li>
+<li><p>Potencia del test: 0.725</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-hemorragia-postparto" class="section level3 hasAnchor" number="1.4.20">
@@ -8469,12 +8440,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:59"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/59-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.32: 
+Figura 1.33: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y evento hemorrágico: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.004</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.0066</p></li>
+<li><p>Potencia del test: 0.858</p></li>
 </ul>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="descripción-de-la-muestra-global.html#cb122-1" aria-hidden="true" tabindex="-1"></a>I<span class="ot">=</span>Casos<span class="sc">$</span>Hemorragia.postparto</span>
 <span id="cb122-2"><a href="descripción-de-la-muestra-global.html#cb122-2" aria-hidden="true" tabindex="-1"></a>DF<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">Factor=</span>I,Síntomas<span class="ot">=</span>Sint)</span>
@@ -8679,7 +8651,7 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:32"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/32-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.33: 
+Figura 1.34: 
 </p>
 </div>
 <ul>
@@ -8816,12 +8788,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:33"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/33-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.34: 
+Figura 1.35: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y evento trombótico: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor <span class="math inline">\(10^{-4}\)</span></p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor <span class="math inline">\(7\times 10^{-11}\)</span></p></li>
+<li><p>Potencia del test: 1</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-uci-madre-sí-no" class="section level3 hasAnchor" number="1.4.22">
@@ -8954,12 +8927,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:34"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/34-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.35: 
+Figura 1.36: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología e ingreso en UCI de la madre: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor <span class="math inline">\(10^{-4}\)</span></p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor <span class="math inline">\(10^{-17}\)</span></p></li>
+<li><p>Potencia del test: 1</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-uci-madre-antes-después" class="section level3 hasAnchor" number="1.4.23">
@@ -8970,22 +8944,18 @@ Figura 1.35:
 <span id="cb128-4"><a href="descripción-de-la-muestra-global.html#cb128-4" aria-hidden="true" tabindex="-1"></a>taula<span class="ot">=</span><span class="fu">table</span>(DF)[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>),<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
 <span id="cb128-5"><a href="descripción-de-la-muestra-global.html#cb128-5" aria-hidden="true" tabindex="-1"></a>proptaula<span class="ot">=</span><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(taula,<span class="at">margin=</span><span class="dv">2</span>),<span class="dv">2</span>)</span>
 <span id="cb128-6"><a href="descripción-de-la-muestra-global.html#cb128-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-7"><a href="descripción-de-la-muestra-global.html#cb128-7" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">cbind</span>(<span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]),n_AS<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]))),</span>
-<span id="cb128-8"><a href="descripción-de-la-muestra-global.html#cb128-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]),n_AS<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>])))<span class="sc">/</span>n_AS,<span class="dv">2</span>),</span>
-<span id="cb128-9"><a href="descripción-de-la-muestra-global.html#cb128-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]),n_SL<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]))),</span>
-<span id="cb128-10"><a href="descripción-de-la-muestra-global.html#cb128-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]),n_SL<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">2</span>])))<span class="sc">/</span>n_SL,<span class="dv">2</span>),</span>
-<span id="cb128-11"><a href="descripción-de-la-muestra-global.html#cb128-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]),n_NE<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]))),</span>
-<span id="cb128-12"><a href="descripción-de-la-muestra-global.html#cb128-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">c</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]),n_NE<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">3</span>])))<span class="sc">/</span>n_NE,<span class="dv">2</span>)</span>
-<span id="cb128-13"><a href="descripción-de-la-muestra-global.html#cb128-13" aria-hidden="true" tabindex="-1"></a>           )</span>
-<span id="cb128-14"><a href="descripción-de-la-muestra-global.html#cb128-14" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">rbind</span>(EEExt,<span class="fu">c</span>(n_AS,<span class="dv">100</span>,n_SL,<span class="dv">100</span>,n_NE,<span class="dv">100</span>))</span>
-<span id="cb128-15"><a href="descripción-de-la-muestra-global.html#cb128-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-16"><a href="descripción-de-la-muestra-global.html#cb128-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(EEExt)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;UCI antes del parto&quot;</span>, <span class="st">&quot;UCI después del parto&quot;</span>,<span class="st">&quot;Pérdidas&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb128-17"><a href="descripción-de-la-muestra-global.html#cb128-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(EEExt)<span class="ot">=</span>Columnes.Sint</span>
-<span id="cb128-18"><a href="descripción-de-la-muestra-global.html#cb128-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-19"><a href="descripción-de-la-muestra-global.html#cb128-19" aria-hidden="true" tabindex="-1"></a>EEExt <span class="sc">%&gt;%</span></span>
-<span id="cb128-20"><a href="descripción-de-la-muestra-global.html#cb128-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb128-21"><a href="descripción-de-la-muestra-global.html#cb128-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>() <span class="sc">%&gt;%</span>     </span>
-<span id="cb128-22"><a href="descripción-de-la-muestra-global.html#cb128-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width=</span><span class="st">&quot;100%&quot;</span>, <span class="at">box_css=</span><span class="st">&quot;border: 0px;&quot;</span>)</span></code></pre></div>
+<span id="cb128-7"><a href="descripción-de-la-muestra-global.html#cb128-7" aria-hidden="true" tabindex="-1"></a>EEExt<span class="ot">=</span><span class="fu">cbind</span>(<span class="fu">as.vector</span>(taula[,<span class="dv">1</span>]), <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">1</span>])),<span class="dv">2</span>),</span>
+<span id="cb128-8"><a href="descripción-de-la-muestra-global.html#cb128-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">as.vector</span>(taula[,<span class="dv">2</span>]), <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">2</span>])),<span class="dv">2</span>),</span>
+<span id="cb128-9"><a href="descripción-de-la-muestra-global.html#cb128-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">as.vector</span>(taula[,<span class="dv">3</span>]), <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">as.vector</span>(<span class="fu">prop.table</span>(taula[,<span class="dv">3</span>])),<span class="dv">2</span>)</span>
+<span id="cb128-10"><a href="descripción-de-la-muestra-global.html#cb128-10" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb128-11"><a href="descripción-de-la-muestra-global.html#cb128-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-12"><a href="descripción-de-la-muestra-global.html#cb128-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(EEExt)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;UCI antes del parto&quot;</span>, <span class="st">&quot;UCI después del parto&quot;</span>)</span>
+<span id="cb128-13"><a href="descripción-de-la-muestra-global.html#cb128-13" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(EEExt)<span class="ot">=</span>Columnes.Sint</span>
+<span id="cb128-14"><a href="descripción-de-la-muestra-global.html#cb128-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-15"><a href="descripción-de-la-muestra-global.html#cb128-15" aria-hidden="true" tabindex="-1"></a>EEExt <span class="sc">%&gt;%</span></span>
+<span id="cb128-16"><a href="descripción-de-la-muestra-global.html#cb128-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb128-17"><a href="descripción-de-la-muestra-global.html#cb128-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>() <span class="sc">%&gt;%</span>     </span>
+<span id="cb128-18"><a href="descripción-de-la-muestra-global.html#cb128-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width=</span><span class="st">&quot;100%&quot;</span>, <span class="at">box_css=</span><span class="st">&quot;border: 0px;&quot;</span>)</span></code></pre></div>
 <div style="border: 0px;overflow-x: scroll; width:100%; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -9021,19 +8991,19 @@ UCI antes del parto
 3
 </td>
 <td style="text-align:right;">
-0.4
+100
 </td>
 <td style="text-align:right;">
 5
 </td>
 <td style="text-align:right;">
-0.78
+71.43
 </td>
 <td style="text-align:right;">
 19
 </td>
 <td style="text-align:right;">
-6.79
+70.37
 </td>
 </tr>
 <tr>
@@ -9044,65 +9014,19 @@ UCI después del parto
 0
 </td>
 <td style="text-align:right;">
-0.0
+0
 </td>
 <td style="text-align:right;">
 2
 </td>
 <td style="text-align:right;">
-0.31
+28.57
 </td>
 <td style="text-align:right;">
 8
 </td>
 <td style="text-align:right;">
-2.86
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pérdidas
-</td>
-<td style="text-align:right;">
-742
-</td>
-<td style="text-align:right;">
-99.6
-</td>
-<td style="text-align:right;">
-636
-</td>
-<td style="text-align:right;">
-98.91
-</td>
-<td style="text-align:right;">
-253
-</td>
-<td style="text-align:right;">
-90.36
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total
-</td>
-<td style="text-align:right;">
-745
-</td>
-<td style="text-align:right;">
-100.0
-</td>
-<td style="text-align:right;">
-643
-</td>
-<td style="text-align:right;">
-100.00
-</td>
-<td style="text-align:right;">
-280
-</td>
-<td style="text-align:right;">
-100.00
+29.63
 </td>
 </tr>
 </tbody>
@@ -9121,12 +9045,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:35"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/35-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.36: 
+Figura 1.37: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y el momento de ingreso en UCI: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor 0.711</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global de UCI: p-valor 0.9203</p></li>
+<li><p>Potencia del test: 0.152</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-prematuridad" class="section level3 hasAnchor" number="1.4.24">
@@ -9259,12 +9184,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:36"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/36-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.37: 
+Figura 1.38: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y prematures: test <span class="math inline">\(\chi^2\)</span>, p-valor <span class="math inline">\(2\times 10^{-7}\)</span></p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor <span class="math inline">\(5\times 10^{-6}\)</span></p></li>
+<li><p>Potencia del test: 0.999</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-apgar" class="section level3 hasAnchor" number="1.4.25">
@@ -9434,12 +9360,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:37"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/37-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.38: 
+Figura 1.39: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y APGAR bajo: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.524</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.5453</p></li>
+<li><p>Potencia del test: 0.159</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-uci-neonato" class="section level3 hasAnchor" number="1.4.26">
@@ -9602,12 +9529,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:38"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/38-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.39: 
+Figura 1.40: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y ingreso en UCIN: test <span class="math inline">\(\chi^2\)</span>, p-valor <span class="math inline">\(7\times 10^{-7}\)</span></p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor <span class="math inline">\(2\times 10^{-5}\)</span></p></li>
+<li><p>Potencia del test: 0.999</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-fetos-muertos-anteparto" class="section level3 hasAnchor" number="1.4.27">
@@ -9775,12 +9703,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:45"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/45-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.40: 
+Figura 1.41: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y muerte antepartio: test <span class="math inline">\(\chi^2\)</span> de Montecarlo, p-valor 0.6467</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.663</p></li>
+<li><p>Potencia del test: 0.119</p></li>
 </ul>
 </div>
 <div id="sintomatología-vs-inicio-de-parto" class="section level3 hasAnchor" number="1.4.28">
@@ -9964,7 +9893,7 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:39"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/39-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.41: 
+Figura 1.42: 
 </p>
 </div>
 <ul>
@@ -10233,11 +10162,12 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:40"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/40-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.42: 
+Figura 1.43: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y tipos de parto: test <span class="math inline">\(\chi^2\)</span>, p-valor <span class="math inline">\(4\times 10^{-7}\)</span></p></li>
+<li><p>Asociación entre los grupos de sintomatología y tipos de parto diferentes de la cesárea programada: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.354</p></li>
 <li><p>Tabla de p-valores ajustados por Bonferroni de tests de diferencia en la tendencia de la gravedad en cada franja de edad respecto del global:</p></li>
 </ul>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="descripción-de-la-muestra-global.html#cb143-1" aria-hidden="true" tabindex="-1"></a>EE<span class="ot">=</span>taula</span>
@@ -10325,7 +10255,7 @@ Cesárea urgente
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:41"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/41-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.43: 
+Figura 1.44: 
 </p>
 </div>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="descripción-de-la-muestra-global.html#cb145-1" aria-hidden="true" tabindex="-1"></a>Dades<span class="ot">=</span><span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fu">round</span>(<span class="fu">min</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>),<span class="fu">round</span>(<span class="fu">max</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>), <span class="fu">round</span>(<span class="fu">mean</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>),</span>
@@ -10497,7 +10427,7 @@ Neumonía
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:42"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/42-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.44: 
+Figura 1.45: 
 </p>
 </div>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="descripción-de-la-muestra-global.html#cb147-1" aria-hidden="true" tabindex="-1"></a>Dades<span class="ot">=</span><span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fu">round</span>(<span class="fu">min</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>),<span class="fu">round</span>(<span class="fu">max</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>), <span class="fu">round</span>(<span class="fu">mean</span>(I[data<span class="sc">$</span>Síntomas<span class="sc">==</span><span class="st">&quot;Asintomática&quot;</span>],<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">1</span>),</span>
@@ -10792,12 +10722,13 @@ Total
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:86"></span>
 <img src="Tesis-Eva-Mor%C3%A1n_files/figure-html/86-1.png" alt="\s" width="50%" />
 <p class="caption">
-Figura 1.45: 
+Figura 1.46: 
 </p>
 </div>
 <ul>
 <li><p>Asociación entre los grupos de sintomatología y bajo peso: test <span class="math inline">\(\chi^2\)</span>, p-valor 0.035</p></li>
 <li><p>Test de diferencia en la tendencia de la gravedad respecto del global: p-valor 0.072</p></li>
+<li><p>Potencia del test: 0.634</p></li>
 </ul>
 
 </div>
