@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-03-28" />
+<meta name="date" content="2023-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="comparación-de-las-dos-olas.html"/>
-<link rel="next" href="grupos-robson.html"/>
+<link rel="next" href="regresiones-logísticas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -472,46 +472,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.19" data-path="comparación-de-infectadas-anteparto-y-periparto.html"><a href="comparación-de-infectadas-anteparto-y-periparto.html#peso-de-neonatos"><i class="fa fa-check"></i><b>5.3.19</b> Peso de neonatos</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="grupos-robson.html"><a href="grupos-robson.html"><i class="fa fa-check"></i><b>6</b> Grupos Robson</a>
+<li class="chapter" data-level="6" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html"><i class="fa fa-check"></i><b>6</b> Regresiones logísticas</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="grupos-robson.html"><a href="grupos-robson.html#muestra-global"><i class="fa fa-check"></i><b>6.1</b> Muestra global</a>
+<li class="chapter" data-level="6.1" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#tablas-para-las-regresiones-logísticas"><i class="fa fa-check"></i><b>6.1</b> Tablas para las regresiones logísticas</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas"><i class="fa fa-check"></i><b>6.1.1</b> Infectadas</a></li>
-<li class="chapter" data-level="6.1.2" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas"><i class="fa fa-check"></i><b>6.1.2</b> No infectadas</a></li>
-<li class="chapter" data-level="6.1.3" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias"><i class="fa fa-check"></i><b>6.1.3</b> Diferencias?</a></li>
-<li class="chapter" data-level="6.1.4" data-path="grupos-robson.html"><a href="grupos-robson.html#grupos-sintomáticos"><i class="fa fa-check"></i><b>6.1.4</b> Grupos sintomáticos</a></li>
+<li class="chapter" data-level="6.1.1" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#embarazos-3"><i class="fa fa-check"></i><b>6.1.1</b> Embarazos</a></li>
+<li class="chapter" data-level="6.1.2" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#hijos"><i class="fa fa-check"></i><b>6.1.2</b> Hijos</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="grupos-robson.html"><a href="grupos-robson.html#a-ola"><i class="fa fa-check"></i><b>6.2</b> 1<sup>a</sup> ola</a>
+<li class="chapter" data-level="6.2" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#regresiones"><i class="fa fa-check"></i><b>6.2</b> Regresiones</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global"><i class="fa fa-check"></i><b>6.2.1</b> Global</a></li>
-<li class="chapter" data-level="6.2.2" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas-1"><i class="fa fa-check"></i><b>6.2.2</b> Infectadas</a></li>
-<li class="chapter" data-level="6.2.3" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas-1"><i class="fa fa-check"></i><b>6.2.3</b> No infectadas</a></li>
-<li class="chapter" data-level="6.2.4" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-1"><i class="fa fa-check"></i><b>6.2.4</b> Diferencias?</a></li>
+<li class="chapter" data-level="6.2.1" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#influencia-de-características-previas-en-la-covid"><i class="fa fa-check"></i><b>6.2.1</b> Influencia de características previas en la COVID</a></li>
+<li class="chapter" data-level="6.2.2" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#rciu"><i class="fa fa-check"></i><b>6.2.2</b> RCIU</a></li>
+<li class="chapter" data-level="6.2.3" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#preeclampsia-6"><i class="fa fa-check"></i><b>6.2.3</b> Preeclampsia</a></li>
+<li class="chapter" data-level="6.2.4" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#preeclampsia-grave-en-preeclámpsicas"><i class="fa fa-check"></i><b>6.2.4</b> Preeclampsia grave en preeclámpsicas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#efectos-trombóticos"><i class="fa fa-check"></i><b>6.2.5</b> Efectos trombóticos</a></li>
+<li class="chapter" data-level="6.2.6" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#rotura-prematura-de-membranas-6"><i class="fa fa-check"></i><b>6.2.6</b> Rotura prematura de membranas</a></li>
+<li class="chapter" data-level="6.2.7" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#prematuridad-1"><i class="fa fa-check"></i><b>6.2.7</b> Prematuridad</a></li>
+<li class="chapter" data-level="6.2.8" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#presencia-de-fetos-muertos"><i class="fa fa-check"></i><b>6.2.8</b> Presencia de fetos muertos</a></li>
+<li class="chapter" data-level="6.2.9" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#ingreso-materno-en-uci-6"><i class="fa fa-check"></i><b>6.2.9</b> Ingreso materno en UCI</a></li>
+<li class="chapter" data-level="6.2.10" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#inicio-de-parto"><i class="fa fa-check"></i><b>6.2.10</b> Inicio de parto</a></li>
+<li class="chapter" data-level="6.2.11" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#tipos-de-parto-2"><i class="fa fa-check"></i><b>6.2.11</b> Tipos de parto</a></li>
+<li class="chapter" data-level="6.2.12" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#uci-neonatal"><i class="fa fa-check"></i><b>6.2.12</b> UCI neonatal</a></li>
+<li class="chapter" data-level="6.2.13" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#bajo-peso-1"><i class="fa fa-check"></i><b>6.2.13</b> Bajo peso</a></li>
+<li class="chapter" data-level="6.2.14" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-2"><i class="fa fa-check"></i><b>6.2.14</b> Cesáreas en Grupo Robson 2</a></li>
+<li class="chapter" data-level="6.2.15" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-2-1"><i class="fa fa-check"></i><b>6.2.15</b> Cesáreas en Grupo Robson 2</a></li>
+<li class="chapter" data-level="6.2.16" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-10"><i class="fa fa-check"></i><b>6.2.16</b> Cesáreas en Grupo Robson 10</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="grupos-robson.html"><a href="grupos-robson.html#a-ola-1"><i class="fa fa-check"></i><b>6.3</b> 2<sup>a</sup> ola</a>
+</ul></li>
+<li class="chapter" data-level="7" data-path="grupos-robson.html"><a href="grupos-robson.html"><i class="fa fa-check"></i><b>7</b> Grupos Robson</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global-1"><i class="fa fa-check"></i><b>6.3.1</b> Global</a></li>
-<li class="chapter" data-level="6.3.2" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas-2"><i class="fa fa-check"></i><b>6.3.2</b> Infectadas</a></li>
-<li class="chapter" data-level="6.3.3" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas-2"><i class="fa fa-check"></i><b>6.3.3</b> No infectadas</a></li>
-<li class="chapter" data-level="6.3.4" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-2"><i class="fa fa-check"></i><b>6.3.4</b> Diferencias?</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="grupos-robson.html"><a href="grupos-robson.html#contrastes-entre-olas"><i class="fa fa-check"></i><b>6.4</b> Contrastes entre olas</a>
+<li class="chapter" data-level="7.1" data-path="grupos-robson.html"><a href="grupos-robson.html#muestra-global"><i class="fa fa-check"></i><b>7.1</b> Muestra global</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="grupos-robson.html"><a href="grupos-robson.html#en-el-global"><i class="fa fa-check"></i><b>6.4.1</b> En el global</a></li>
-<li class="chapter" data-level="6.4.2" data-path="grupos-robson.html"><a href="grupos-robson.html#entre-infectadas"><i class="fa fa-check"></i><b>6.4.2</b> Entre infectadas</a></li>
+<li class="chapter" data-level="7.1.1" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas"><i class="fa fa-check"></i><b>7.1.1</b> Infectadas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas"><i class="fa fa-check"></i><b>7.1.2</b> No infectadas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias"><i class="fa fa-check"></i><b>7.1.3</b> Diferencias?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="grupos-robson.html"><a href="grupos-robson.html#grupos-sintomáticos"><i class="fa fa-check"></i><b>7.1.4</b> Grupos sintomáticos</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="grupos-robson.html"><a href="grupos-robson.html#grupos-sintomáticos-y-olas"><i class="fa fa-check"></i><b>6.5</b> Grupos sintomáticos y olas</a>
+<li class="chapter" data-level="7.2" data-path="grupos-robson.html"><a href="grupos-robson.html#a-ola"><i class="fa fa-check"></i><b>7.2</b> 1<sup>a</sup> ola</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global-2"><i class="fa fa-check"></i><b>6.5.1</b> Global</a></li>
-<li class="chapter" data-level="6.5.2" data-path="grupos-robson.html"><a href="grupos-robson.html#comparando-olas"><i class="fa fa-check"></i><b>6.5.2</b> Comparando olas</a></li>
-<li class="chapter" data-level="6.5.3" data-path="grupos-robson.html"><a href="grupos-robson.html#enter-cesáreas"><i class="fa fa-check"></i><b>6.5.3</b> Enter cesáreas</a></li>
+<li class="chapter" data-level="7.2.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global"><i class="fa fa-check"></i><b>7.2.1</b> Global</a></li>
+<li class="chapter" data-level="7.2.2" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas-1"><i class="fa fa-check"></i><b>7.2.2</b> Infectadas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas-1"><i class="fa fa-check"></i><b>7.2.3</b> No infectadas</a></li>
+<li class="chapter" data-level="7.2.4" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-1"><i class="fa fa-check"></i><b>7.2.4</b> Diferencias?</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="grupos-robson.html"><a href="grupos-robson.html#antepartos-contra-peripartos"><i class="fa fa-check"></i><b>6.6</b> Antepartos contra peripartos</a>
+<li class="chapter" data-level="7.3" data-path="grupos-robson.html"><a href="grupos-robson.html#a-ola-1"><i class="fa fa-check"></i><b>7.3</b> 2<sup>a</sup> ola</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-3"><i class="fa fa-check"></i><b>6.6.1</b> Diferencias?</a></li>
-<li class="chapter" data-level="6.6.2" data-path="grupos-robson.html"><a href="grupos-robson.html#enter-cesáreas-1"><i class="fa fa-check"></i><b>6.6.2</b> Enter cesáreas</a></li>
+<li class="chapter" data-level="7.3.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global-1"><i class="fa fa-check"></i><b>7.3.1</b> Global</a></li>
+<li class="chapter" data-level="7.3.2" data-path="grupos-robson.html"><a href="grupos-robson.html#infectadas-2"><i class="fa fa-check"></i><b>7.3.2</b> Infectadas</a></li>
+<li class="chapter" data-level="7.3.3" data-path="grupos-robson.html"><a href="grupos-robson.html#no-infectadas-2"><i class="fa fa-check"></i><b>7.3.3</b> No infectadas</a></li>
+<li class="chapter" data-level="7.3.4" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-2"><i class="fa fa-check"></i><b>7.3.4</b> Diferencias?</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="grupos-robson.html"><a href="grupos-robson.html#bonus-track"><i class="fa fa-check"></i><b>6.7</b> Bonus Track</a></li>
+<li class="chapter" data-level="7.4" data-path="grupos-robson.html"><a href="grupos-robson.html#contrastes-entre-olas"><i class="fa fa-check"></i><b>7.4</b> Contrastes entre olas</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="grupos-robson.html"><a href="grupos-robson.html#en-el-global"><i class="fa fa-check"></i><b>7.4.1</b> En el global</a></li>
+<li class="chapter" data-level="7.4.2" data-path="grupos-robson.html"><a href="grupos-robson.html#entre-infectadas"><i class="fa fa-check"></i><b>7.4.2</b> Entre infectadas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="grupos-robson.html"><a href="grupos-robson.html#grupos-sintomáticos-y-olas"><i class="fa fa-check"></i><b>7.5</b> Grupos sintomáticos y olas</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="grupos-robson.html"><a href="grupos-robson.html#global-2"><i class="fa fa-check"></i><b>7.5.1</b> Global</a></li>
+<li class="chapter" data-level="7.5.2" data-path="grupos-robson.html"><a href="grupos-robson.html#comparando-olas"><i class="fa fa-check"></i><b>7.5.2</b> Comparando olas</a></li>
+<li class="chapter" data-level="7.5.3" data-path="grupos-robson.html"><a href="grupos-robson.html#enter-cesáreas"><i class="fa fa-check"></i><b>7.5.3</b> Enter cesáreas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="grupos-robson.html"><a href="grupos-robson.html#antepartos-contra-peripartos"><i class="fa fa-check"></i><b>7.6</b> Antepartos contra peripartos</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="grupos-robson.html"><a href="grupos-robson.html#diferencias-3"><i class="fa fa-check"></i><b>7.6.1</b> Diferencias?</a></li>
+<li class="chapter" data-level="7.6.2" data-path="grupos-robson.html"><a href="grupos-robson.html#enter-cesáreas-1"><i class="fa fa-check"></i><b>7.6.2</b> Enter cesáreas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="grupos-robson.html"><a href="grupos-robson.html#bonus-track"><i class="fa fa-check"></i><b>7.7</b> Bonus Track</a></li>
 </ul></li>
 </ul>
 
@@ -3597,7 +3624,7 @@ Pérdidas
         </div>
       </div>
 <a href="comparación-de-las-dos-olas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="grupos-robson.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regresiones-logísticas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
