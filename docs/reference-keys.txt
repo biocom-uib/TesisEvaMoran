@@ -570,7 +570,7 @@ covid-anteparto-asintomática-leve-o-grave-contra-no-covid-11
 covid-periparto-asintomática-leve-o-grave-contra-no-covid-11
 ola-10
 infección-y-ola-11
-uci-neonatal
+bajo-peso-3
 covid-sí-o-no-13
 covid-no-asintomática-leve-o-grave-7
 covid-ante-o-periparto-contra-no-7
@@ -578,7 +578,7 @@ covid-anteparto-asintomática-leve-o-grave-contra-no-covid-12
 covid-periparto-asintomática-leve-o-grave-contra-no-covid-12
 ola-11
 infección-y-ola-12
-bajo-peso-3
+uci-neonatal
 covid-sí-o-no-14
 covid-no-asintomática-leve-o-grave-8
 covid-ante-o-periparto-contra-no-8

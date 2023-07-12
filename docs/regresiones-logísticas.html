@@ -512,8 +512,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.11" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#tipo-de-hpp-en-gestantes-con-hpp"><i class="fa fa-check"></i><b>9.2.11</b> Tipo de HPP en gestantes con HPP</a></li>
 <li class="chapter" data-level="9.2.12" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#inicio-de-parto-3"><i class="fa fa-check"></i><b>9.2.12</b> Inicio de parto</a></li>
 <li class="chapter" data-level="9.2.13" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#tipos-de-parto-1"><i class="fa fa-check"></i><b>9.2.13</b> Tipos de parto</a></li>
-<li class="chapter" data-level="9.2.14" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#uci-neonatal"><i class="fa fa-check"></i><b>9.2.14</b> UCI neonatal</a></li>
-<li class="chapter" data-level="9.2.15" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#bajo-peso-3"><i class="fa fa-check"></i><b>9.2.15</b> Bajo peso</a></li>
+<li class="chapter" data-level="9.2.14" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#bajo-peso-3"><i class="fa fa-check"></i><b>9.2.14</b> Bajo peso</a></li>
+<li class="chapter" data-level="9.2.15" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#uci-neonatal"><i class="fa fa-check"></i><b>9.2.15</b> UCI neonatal</a></li>
 <li class="chapter" data-level="9.2.16" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-2"><i class="fa fa-check"></i><b>9.2.16</b> Cesáreas en Grupo Robson 2</a></li>
 <li class="chapter" data-level="9.2.17" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-4"><i class="fa fa-check"></i><b>9.2.17</b> Cesáreas en Grupo Robson 4</a></li>
 <li class="chapter" data-level="9.2.18" data-path="regresiones-logísticas.html"><a href="regresiones-logísticas.html#cesáreas-en-grupo-robson-10"><i class="fa fa-check"></i><b>9.2.18</b> Cesáreas en Grupo Robson 10</a></li>
@@ -27803,1292 +27803,36 @@ DG
 </table>
 </div>
 </div>
-<div id="uci-neonatal" class="section level3 hasAnchor" number="9.2.14">
-<h3><span class="header-section-number">9.2.14</span> UCI neonatal<a href="regresiones-logísticas.html#uci-neonatal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bajo-peso-3" class="section level3 hasAnchor" number="9.2.14">
+<h3><span class="header-section-number">9.2.14</span> Bajo peso<a href="regresiones-logísticas.html#bajo-peso-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="covid-sí-o-no-13" class="section level4 hasAnchor" number="9.2.14.1">
 <h4><span class="header-section-number">9.2.14.1</span> COVID Sí o No<a href="regresiones-logísticas.html#covid-sí-o-no-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb680"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb680-1"><a href="regresiones-logísticas.html#cb680-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>COVID<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb680-2"><a href="regresiones-logísticas.html#cb680-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb680-3"><a href="regresiones-logísticas.html#cb680-3" tabindex="-1"></a></span>
-<span id="cb680-4"><a href="regresiones-logísticas.html#cb680-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb680-5"><a href="regresiones-logísticas.html#cb680-5" tabindex="-1"></a>                 <span class="st">&quot;COVID&quot;</span>,</span>
-<span id="cb680-6"><a href="regresiones-logísticas.html#cb680-6" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb680-7"><a href="regresiones-logísticas.html#cb680-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb680-8"><a href="regresiones-logísticas.html#cb680-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb680-9"><a href="regresiones-logísticas.html#cb680-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb680-10"><a href="regresiones-logísticas.html#cb680-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb680-11"><a href="regresiones-logísticas.html#cb680-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb680-12"><a href="regresiones-logísticas.html#cb680-12" tabindex="-1"></a>                  )</span>
-<span id="cb680-13"><a href="regresiones-logísticas.html#cb680-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb680-14"><a href="regresiones-logísticas.html#cb680-14" tabindex="-1"></a></span>
-<span id="cb680-15"><a href="regresiones-logísticas.html#cb680-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb680-16"><a href="regresiones-logísticas.html#cb680-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb680-17"><a href="regresiones-logísticas.html#cb680-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-COVID
-</td>
-<td style="text-align:right;">
-3.350
-</td>
-<td style="text-align:right;">
-2.197
-</td>
-<td style="text-align:right;">
-5.109
-</td>
-<td style="text-align:left;">
-2e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:left;">
-7.6e-07
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-8.025
-</td>
-<td style="text-align:right;">
-4.813
-</td>
-<td style="text-align:right;">
-13.379
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-10.620
-</td>
-<td style="text-align:right;">
-4.523
-</td>
-<td style="text-align:right;">
-24.932
-</td>
-<td style="text-align:left;">
-6e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.173
-</td>
-<td style="text-align:right;">
-0.562
-</td>
-<td style="text-align:right;">
-2.447
-</td>
-<td style="text-align:left;">
-0.67135379
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.717
-</td>
-<td style="text-align:right;">
-0.362
-</td>
-<td style="text-align:right;">
-1.420
-</td>
-<td style="text-align:left;">
-0.33972729
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.082
-</td>
-<td style="text-align:right;">
-0.038
-</td>
-<td style="text-align:right;">
-0.177
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="covid-no-asintomática-leve-o-grave-7" class="section level4 hasAnchor" number="9.2.14.2">
-<h4><span class="header-section-number">9.2.14.2</span> COVID No, asintomática, leve o grave<a href="regresiones-logísticas.html#covid-no-asintomática-leve-o-grave-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="regresiones-logísticas.html#cb681-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>Sint<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb681-2"><a href="regresiones-logísticas.html#cb681-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb681-3"><a href="regresiones-logísticas.html#cb681-3" tabindex="-1"></a></span>
-<span id="cb681-4"><a href="regresiones-logísticas.html#cb681-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb681-5"><a href="regresiones-logísticas.html#cb681-5" tabindex="-1"></a>                 <span class="st">&quot;COVID asintomática&quot;</span>,</span>
-<span id="cb681-6"><a href="regresiones-logísticas.html#cb681-6" tabindex="-1"></a>                 <span class="st">&quot;COVID leve&quot;</span>,</span>
-<span id="cb681-7"><a href="regresiones-logísticas.html#cb681-7" tabindex="-1"></a>                 <span class="st">&quot;COVID grave&quot;</span>,</span>
-<span id="cb681-8"><a href="regresiones-logísticas.html#cb681-8" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb681-9"><a href="regresiones-logísticas.html#cb681-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb681-10"><a href="regresiones-logísticas.html#cb681-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb681-11"><a href="regresiones-logísticas.html#cb681-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb681-12"><a href="regresiones-logísticas.html#cb681-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb681-13"><a href="regresiones-logísticas.html#cb681-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb681-14"><a href="regresiones-logísticas.html#cb681-14" tabindex="-1"></a>                  )</span>
-<span id="cb681-15"><a href="regresiones-logísticas.html#cb681-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb681-16"><a href="regresiones-logísticas.html#cb681-16" tabindex="-1"></a></span>
-<span id="cb681-17"><a href="regresiones-logísticas.html#cb681-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb681-18"><a href="regresiones-logísticas.html#cb681-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb681-19"><a href="regresiones-logísticas.html#cb681-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-COVID asintomática
-</td>
-<td style="text-align:right;">
-2.650
-</td>
-<td style="text-align:right;">
-1.596
-</td>
-<td style="text-align:right;">
-4.400
-</td>
-<td style="text-align:left;">
-0.00016446
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID leve
-</td>
-<td style="text-align:right;">
-3.143
-</td>
-<td style="text-align:right;">
-1.899
-</td>
-<td style="text-align:right;">
-5.201
-</td>
-<td style="text-align:left;">
-8.33e-06
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID grave
-</td>
-<td style="text-align:right;">
-5.736
-</td>
-<td style="text-align:right;">
-3.259
-</td>
-<td style="text-align:right;">
-10.097
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:left;">
-1.4e-06
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-7.723
-</td>
-<td style="text-align:right;">
-4.611
-</td>
-<td style="text-align:right;">
-12.935
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-10.928
-</td>
-<td style="text-align:right;">
-4.685
-</td>
-<td style="text-align:right;">
-25.486
-</td>
-<td style="text-align:left;">
-3e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.261
-</td>
-<td style="text-align:right;">
-0.600
-</td>
-<td style="text-align:right;">
-2.651
-</td>
-<td style="text-align:left;">
-0.5405087
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.741
-</td>
-<td style="text-align:right;">
-0.373
-</td>
-<td style="text-align:right;">
-1.474
-</td>
-<td style="text-align:left;">
-0.39283102
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.080
-</td>
-<td style="text-align:right;">
-0.037
-</td>
-<td style="text-align:right;">
-0.174
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="covid-ante-o-periparto-contra-no-7" class="section level4 hasAnchor" number="9.2.14.3">
-<h4><span class="header-section-number">9.2.14.3</span> COVID ante o periparto contra No<a href="regresiones-logísticas.html#covid-ante-o-periparto-contra-no-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb682"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb682-1"><a href="regresiones-logísticas.html#cb682-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>PreP<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb682-2"><a href="regresiones-logísticas.html#cb682-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb682-3"><a href="regresiones-logísticas.html#cb682-3" tabindex="-1"></a></span>
-<span id="cb682-4"><a href="regresiones-logísticas.html#cb682-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb682-5"><a href="regresiones-logísticas.html#cb682-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto&quot;</span>,</span>
-<span id="cb682-6"><a href="regresiones-logísticas.html#cb682-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto&quot;</span>,</span>
-<span id="cb682-7"><a href="regresiones-logísticas.html#cb682-7" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb682-8"><a href="regresiones-logísticas.html#cb682-8" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb682-9"><a href="regresiones-logísticas.html#cb682-9" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb682-10"><a href="regresiones-logísticas.html#cb682-10" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb682-11"><a href="regresiones-logísticas.html#cb682-11" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb682-12"><a href="regresiones-logísticas.html#cb682-12" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb682-13"><a href="regresiones-logísticas.html#cb682-13" tabindex="-1"></a>                  )</span>
-<span id="cb682-14"><a href="regresiones-logísticas.html#cb682-14" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb682-15"><a href="regresiones-logísticas.html#cb682-15" tabindex="-1"></a></span>
-<span id="cb682-16"><a href="regresiones-logísticas.html#cb682-16" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb682-17"><a href="regresiones-logísticas.html#cb682-17" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb682-18"><a href="regresiones-logísticas.html#cb682-18" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-COVID anteparto
-</td>
-<td style="text-align:right;">
-2.695
-</td>
-<td style="text-align:right;">
-1.672
-</td>
-<td style="text-align:right;">
-4.343
-</td>
-<td style="text-align:left;">
-4.685e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID periparto
-</td>
-<td style="text-align:right;">
-4.217
-</td>
-<td style="text-align:right;">
-2.632
-</td>
-<td style="text-align:right;">
-6.755
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:left;">
-1.43e-06
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-8.177
-</td>
-<td style="text-align:right;">
-4.899
-</td>
-<td style="text-align:right;">
-13.648
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-10.855
-</td>
-<td style="text-align:right;">
-4.592
-</td>
-<td style="text-align:right;">
-25.662
-</td>
-<td style="text-align:left;">
-6e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.262
-</td>
-<td style="text-align:right;">
-0.606
-</td>
-<td style="text-align:right;">
-2.630
-</td>
-<td style="text-align:left;">
-0.53459669
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.763
-</td>
-<td style="text-align:right;">
-0.384
-</td>
-<td style="text-align:right;">
-1.516
-</td>
-<td style="text-align:left;">
-0.43958863
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.087
-</td>
-<td style="text-align:right;">
-0.040
-</td>
-<td style="text-align:right;">
-0.187
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="covid-anteparto-asintomática-leve-o-grave-contra-no-covid-12" class="section level4 hasAnchor" number="9.2.14.4">
-<h4><span class="header-section-number">9.2.14.4</span> COVID anteparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-anteparto-asintomática-leve-o-grave-contra-no-covid-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="regresiones-logísticas.html#cb683-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SintPre<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb683-2"><a href="regresiones-logísticas.html#cb683-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb683-3"><a href="regresiones-logísticas.html#cb683-3" tabindex="-1"></a></span>
-<span id="cb683-4"><a href="regresiones-logísticas.html#cb683-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb683-5"><a href="regresiones-logísticas.html#cb683-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto asintomática&quot;</span>,</span>
-<span id="cb683-6"><a href="regresiones-logísticas.html#cb683-6" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto leve&quot;</span>,</span>
-<span id="cb683-7"><a href="regresiones-logísticas.html#cb683-7" tabindex="-1"></a>                 <span class="st">&quot;COVID anteparto grave&quot;</span>,</span>
-<span id="cb683-8"><a href="regresiones-logísticas.html#cb683-8" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb683-9"><a href="regresiones-logísticas.html#cb683-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb683-10"><a href="regresiones-logísticas.html#cb683-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb683-11"><a href="regresiones-logísticas.html#cb683-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb683-12"><a href="regresiones-logísticas.html#cb683-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb683-13"><a href="regresiones-logísticas.html#cb683-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb683-14"><a href="regresiones-logísticas.html#cb683-14" tabindex="-1"></a>                  )</span>
-<span id="cb683-15"><a href="regresiones-logísticas.html#cb683-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb683-16"><a href="regresiones-logísticas.html#cb683-16" tabindex="-1"></a></span>
-<span id="cb683-17"><a href="regresiones-logísticas.html#cb683-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb683-18"><a href="regresiones-logísticas.html#cb683-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb683-19"><a href="regresiones-logísticas.html#cb683-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-COVID anteparto asintomática
-</td>
-<td style="text-align:right;">
-1.932
-</td>
-<td style="text-align:right;">
-0.901
-</td>
-<td style="text-align:right;">
-4.141
-</td>
-<td style="text-align:left;">
-0.090444
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID anteparto leve
-</td>
-<td style="text-align:right;">
-3.072
-</td>
-<td style="text-align:right;">
-1.775
-</td>
-<td style="text-align:right;">
-5.315
-</td>
-<td style="text-align:left;">
-6.027e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID anteparto grave
-</td>
-<td style="text-align:right;">
-2.751
-</td>
-<td style="text-align:right;">
-1.343
-</td>
-<td style="text-align:right;">
-5.635
-</td>
-<td style="text-align:left;">
-0.00566299
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-1.000
-</td>
-<td style="text-align:left;">
-0.00052505
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-8.937
-</td>
-<td style="text-align:right;">
-4.600
-</td>
-<td style="text-align:right;">
-17.364
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-12.144
-</td>
-<td style="text-align:right;">
-4.523
-</td>
-<td style="text-align:right;">
-32.605
-</td>
-<td style="text-align:left;">
-7.2e-07
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.008
-</td>
-<td style="text-align:right;">
-0.408
-</td>
-<td style="text-align:right;">
-2.490
-</td>
-<td style="text-align:left;">
-0.98584584
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.592
-</td>
-<td style="text-align:right;">
-0.258
-</td>
-<td style="text-align:right;">
-1.358
-</td>
-<td style="text-align:left;">
-0.21545443
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.114
-</td>
-<td style="text-align:right;">
-0.042
-</td>
-<td style="text-align:right;">
-0.312
-</td>
-<td style="text-align:left;">
-2.433e-05
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="covid-periparto-asintomática-leve-o-grave-contra-no-covid-12" class="section level4 hasAnchor" number="9.2.14.5">
-<h4><span class="header-section-number">9.2.14.5</span> COVID periparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-periparto-asintomática-leve-o-grave-contra-no-covid-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb684"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb684-1"><a href="regresiones-logísticas.html#cb684-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SintPeri<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb684-2"><a href="regresiones-logísticas.html#cb684-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb684-3"><a href="regresiones-logísticas.html#cb684-3" tabindex="-1"></a></span>
-<span id="cb684-4"><a href="regresiones-logísticas.html#cb684-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb684-5"><a href="regresiones-logísticas.html#cb684-5" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto asintomática&quot;</span>,</span>
-<span id="cb684-6"><a href="regresiones-logísticas.html#cb684-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto leve&quot;</span>,</span>
-<span id="cb684-7"><a href="regresiones-logísticas.html#cb684-7" tabindex="-1"></a>                 <span class="st">&quot;COVID periparto grave&quot;</span>,</span>
-<span id="cb684-8"><a href="regresiones-logísticas.html#cb684-8" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb684-9"><a href="regresiones-logísticas.html#cb684-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb684-10"><a href="regresiones-logísticas.html#cb684-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb684-11"><a href="regresiones-logísticas.html#cb684-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb684-12"><a href="regresiones-logísticas.html#cb684-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb684-13"><a href="regresiones-logísticas.html#cb684-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb684-14"><a href="regresiones-logísticas.html#cb684-14" tabindex="-1"></a>                  )</span>
-<span id="cb684-15"><a href="regresiones-logísticas.html#cb684-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb684-16"><a href="regresiones-logísticas.html#cb684-16" tabindex="-1"></a></span>
-<span id="cb684-17"><a href="regresiones-logísticas.html#cb684-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb684-18"><a href="regresiones-logísticas.html#cb684-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb684-19"><a href="regresiones-logísticas.html#cb684-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-COVID periparto asintomática
-</td>
-<td style="text-align:right;">
-3.478
-</td>
-<td style="text-align:right;">
-1.953
-</td>
-<td style="text-align:right;">
-6.191
-</td>
-<td style="text-align:left;">
-2.283e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID periparto leve
-</td>
-<td style="text-align:right;">
-3.217
-</td>
-<td style="text-align:right;">
-1.466
-</td>
-<td style="text-align:right;">
-7.061
-</td>
-<td style="text-align:left;">
-0.00357207
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-COVID periparto grave
-</td>
-<td style="text-align:right;">
-18.137
-</td>
-<td style="text-align:right;">
-8.254
-</td>
-<td style="text-align:right;">
-39.856
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.998
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:left;">
-4.647e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-8.629
-</td>
-<td style="text-align:right;">
-4.514
-</td>
-<td style="text-align:right;">
-16.498
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-6.971
-</td>
-<td style="text-align:right;">
-1.814
-</td>
-<td style="text-align:right;">
-26.789
-</td>
-<td style="text-align:left;">
-0.00469449
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.503
-</td>
-<td style="text-align:right;">
-0.538
-</td>
-<td style="text-align:right;">
-4.197
-</td>
-<td style="text-align:left;">
-0.43721945
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-1.540
-</td>
-<td style="text-align:right;">
-0.661
-</td>
-<td style="text-align:right;">
-3.591
-</td>
-<td style="text-align:left;">
-0.31721416
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.062
-</td>
-<td style="text-align:right;">
-0.025
-</td>
-<td style="text-align:right;">
-0.152
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="ola-11" class="section level4 hasAnchor" number="9.2.14.6">
-<h4><span class="header-section-number">9.2.14.6</span> Ola<a href="regresiones-logísticas.html#ola-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="regresiones-logísticas.html#cb685-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SegundOla<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb685-2"><a href="regresiones-logísticas.html#cb685-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb685-3"><a href="regresiones-logísticas.html#cb685-3" tabindex="-1"></a></span>
-<span id="cb685-4"><a href="regresiones-logísticas.html#cb685-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb685-5"><a href="regresiones-logísticas.html#cb685-5" tabindex="-1"></a>                 <span class="st">&quot;2a ola rel a 1a ola&quot;</span>,</span>
-<span id="cb685-6"><a href="regresiones-logísticas.html#cb685-6" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb685-7"><a href="regresiones-logísticas.html#cb685-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb685-8"><a href="regresiones-logísticas.html#cb685-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb685-9"><a href="regresiones-logísticas.html#cb685-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb685-10"><a href="regresiones-logísticas.html#cb685-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb685-11"><a href="regresiones-logísticas.html#cb685-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb685-12"><a href="regresiones-logísticas.html#cb685-12" tabindex="-1"></a>                  )</span>
-<span id="cb685-13"><a href="regresiones-logísticas.html#cb685-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb685-14"><a href="regresiones-logísticas.html#cb685-14" tabindex="-1"></a></span>
-<span id="cb685-15"><a href="regresiones-logísticas.html#cb685-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb685-16"><a href="regresiones-logísticas.html#cb685-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb685-17"><a href="regresiones-logísticas.html#cb685-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-2a ola rel a 1a ola
-</td>
-<td style="text-align:right;">
-1.027
-</td>
-<td style="text-align:right;">
-0.702
-</td>
-<td style="text-align:right;">
-1.502
-</td>
-<td style="text-align:left;">
-0.89240127
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:left;">
-1.5e-07
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-8.297
-</td>
-<td style="text-align:right;">
-5.045
-</td>
-<td style="text-align:right;">
-13.645
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-11.325
-</td>
-<td style="text-align:right;">
-4.934
-</td>
-<td style="text-align:right;">
-25.995
-</td>
-<td style="text-align:left;">
-1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.158
-</td>
-<td style="text-align:right;">
-0.562
-</td>
-<td style="text-align:right;">
-2.384
-</td>
-<td style="text-align:left;">
-0.69071083
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.665
-</td>
-<td style="text-align:right;">
-0.343
-</td>
-<td style="text-align:right;">
-1.292
-</td>
-<td style="text-align:left;">
-0.22895855
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.087
-</td>
-<td style="text-align:right;">
-0.041
-</td>
-<td style="text-align:right;">
-0.183
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="infección-y-ola-12" class="section level4 hasAnchor" number="9.2.14.7">
-<h4><span class="header-section-number">9.2.14.7</span> Infección y ola<a href="regresiones-logísticas.html#infección-y-ola-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb686"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb686-1"><a href="regresiones-logísticas.html#cb686-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SegundOla<span class="sc">+</span>Pesos<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños[DFL.niños<span class="sc">$</span>COVID<span class="sc">==</span><span class="dv">1</span>,],<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb686-2"><a href="regresiones-logísticas.html#cb686-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb686-3"><a href="regresiones-logísticas.html#cb686-3" tabindex="-1"></a></span>
-<span id="cb686-4"><a href="regresiones-logísticas.html#cb686-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb686-5"><a href="regresiones-logísticas.html#cb686-5" tabindex="-1"></a>                 <span class="st">&quot;Infectadas 2a ola rel infectadas a 1a ola&quot;</span>,</span>
-<span id="cb686-6"><a href="regresiones-logísticas.html#cb686-6" tabindex="-1"></a>                 <span class="st">&quot;Peso (en gr.)&quot;</span>,</span>
-<span id="cb686-7"><a href="regresiones-logísticas.html#cb686-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb686-8"><a href="regresiones-logísticas.html#cb686-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb686-9"><a href="regresiones-logísticas.html#cb686-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb686-10"><a href="regresiones-logísticas.html#cb686-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb686-11"><a href="regresiones-logísticas.html#cb686-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
-<span id="cb686-12"><a href="regresiones-logísticas.html#cb686-12" tabindex="-1"></a>                  )</span>
-<span id="cb686-13"><a href="regresiones-logísticas.html#cb686-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb686-14"><a href="regresiones-logísticas.html#cb686-14" tabindex="-1"></a></span>
-<span id="cb686-15"><a href="regresiones-logísticas.html#cb686-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb686-16"><a href="regresiones-logísticas.html#cb686-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb686-17"><a href="regresiones-logísticas.html#cb686-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-ORa
-</th>
-<th style="text-align:right;">
-IC 95%: extremo inf.
-</th>
-<th style="text-align:right;">
-IC 95%: extremo sup.
-</th>
-<th style="text-align:left;">
-p-valor
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Infectadas 2a ola rel infectadas a 1a ola
-</td>
-<td style="text-align:right;">
-0.789
-</td>
-<td style="text-align:right;">
-0.511
-</td>
-<td style="text-align:right;">
-1.219
-</td>
-<td style="text-align:left;">
-0.2862062
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Peso (en gr.)
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-0.999
-</td>
-<td style="text-align:right;">
-1.000
-</td>
-<td style="text-align:left;">
-4.878e-05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Prematuridad
-</td>
-<td style="text-align:right;">
-7.929
-</td>
-<td style="text-align:right;">
-4.339
-</td>
-<td style="text-align:right;">
-14.487
-</td>
-<td style="text-align:left;">
-&lt;1e-08
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Anomalías congénitas
-</td>
-<td style="text-align:right;">
-12.906
-</td>
-<td style="text-align:right;">
-4.970
-</td>
-<td style="text-align:right;">
-33.514
-</td>
-<td style="text-align:left;">
-1.5e-07
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RCIU
-</td>
-<td style="text-align:right;">
-1.619
-</td>
-<td style="text-align:right;">
-0.711
-</td>
-<td style="text-align:right;">
-3.686
-</td>
-<td style="text-align:left;">
-0.2511596
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gestación múltiple
-</td>
-<td style="text-align:right;">
-0.480
-</td>
-<td style="text-align:right;">
-0.204
-</td>
-<td style="text-align:right;">
-1.131
-</td>
-<td style="text-align:left;">
-0.09313255
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apgar≤7
-</td>
-<td style="text-align:right;">
-0.083
-</td>
-<td style="text-align:right;">
-0.032
-</td>
-<td style="text-align:right;">
-0.214
-</td>
-<td style="text-align:left;">
-2.9e-07
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="bajo-peso-3" class="section level3 hasAnchor" number="9.2.15">
-<h3><span class="header-section-number">9.2.15</span> Bajo peso<a href="regresiones-logísticas.html#bajo-peso-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="covid-sí-o-no-14" class="section level4 hasAnchor" number="9.2.15.1">
-<h4><span class="header-section-number">9.2.15.1</span> COVID Sí o No<a href="regresiones-logísticas.html#covid-sí-o-no-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="regresiones-logísticas.html#cb687-1" tabindex="-1"></a>DFL.niños<span class="sc">$</span>PesosP<span class="ot">=</span><span class="fu">cut</span>(DFL.niños<span class="sc">$</span>Pesos,<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2500</span>,<span class="dv">10000</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb687-2"><a href="regresiones-logísticas.html#cb687-2" tabindex="-1"></a>DFL.niños<span class="sc">$</span>PesosP<span class="ot">=</span><span class="fu">relevel</span>(DFL.niños<span class="sc">$</span>PesosP,<span class="st">&quot;0&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb688"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb688-1"><a href="regresiones-logísticas.html#cb688-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>COVID<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
-<span id="cb688-2"><a href="regresiones-logísticas.html#cb688-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb688-3"><a href="regresiones-logísticas.html#cb688-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb688-4"><a href="regresiones-logísticas.html#cb688-4" tabindex="-1"></a></span>
-<span id="cb688-5"><a href="regresiones-logísticas.html#cb688-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb688-6"><a href="regresiones-logísticas.html#cb688-6" tabindex="-1"></a>                 <span class="st">&quot;COVID&quot;</span>,</span>
-<span id="cb688-7"><a href="regresiones-logísticas.html#cb688-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb688-8"><a href="regresiones-logísticas.html#cb688-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb688-9"><a href="regresiones-logísticas.html#cb688-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb688-10"><a href="regresiones-logísticas.html#cb688-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb688-11"><a href="regresiones-logísticas.html#cb688-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb688-12"><a href="regresiones-logísticas.html#cb688-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb688-13"><a href="regresiones-logísticas.html#cb688-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb688-14"><a href="regresiones-logísticas.html#cb688-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb688-15"><a href="regresiones-logísticas.html#cb688-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb688-16"><a href="regresiones-logísticas.html#cb688-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb688-17"><a href="regresiones-logísticas.html#cb688-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb688-18"><a href="regresiones-logísticas.html#cb688-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb688-19"><a href="regresiones-logísticas.html#cb688-19" tabindex="-1"></a>                  )</span>
-<span id="cb688-20"><a href="regresiones-logísticas.html#cb688-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb688-21"><a href="regresiones-logísticas.html#cb688-21" tabindex="-1"></a></span>
-<span id="cb688-22"><a href="regresiones-logísticas.html#cb688-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb688-23"><a href="regresiones-logísticas.html#cb688-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb688-24"><a href="regresiones-logísticas.html#cb688-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb680"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb680-1"><a href="regresiones-logísticas.html#cb680-1" tabindex="-1"></a>DFL.niños<span class="sc">$</span>PesosP<span class="ot">=</span><span class="fu">cut</span>(DFL.niños<span class="sc">$</span>Pesos,<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2500</span>,<span class="dv">10000</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb680-2"><a href="regresiones-logísticas.html#cb680-2" tabindex="-1"></a>DFL.niños<span class="sc">$</span>PesosP<span class="ot">=</span><span class="fu">relevel</span>(DFL.niños<span class="sc">$</span>PesosP,<span class="st">&quot;0&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="regresiones-logísticas.html#cb681-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>COVID<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
+<span id="cb681-2"><a href="regresiones-logísticas.html#cb681-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb681-3"><a href="regresiones-logísticas.html#cb681-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb681-4"><a href="regresiones-logísticas.html#cb681-4" tabindex="-1"></a></span>
+<span id="cb681-5"><a href="regresiones-logísticas.html#cb681-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb681-6"><a href="regresiones-logísticas.html#cb681-6" tabindex="-1"></a>                 <span class="st">&quot;COVID&quot;</span>,</span>
+<span id="cb681-7"><a href="regresiones-logísticas.html#cb681-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb681-8"><a href="regresiones-logísticas.html#cb681-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb681-9"><a href="regresiones-logísticas.html#cb681-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb681-10"><a href="regresiones-logísticas.html#cb681-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb681-11"><a href="regresiones-logísticas.html#cb681-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb681-12"><a href="regresiones-logísticas.html#cb681-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb681-13"><a href="regresiones-logísticas.html#cb681-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb681-14"><a href="regresiones-logísticas.html#cb681-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb681-15"><a href="regresiones-logísticas.html#cb681-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb681-16"><a href="regresiones-logísticas.html#cb681-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb681-17"><a href="regresiones-logísticas.html#cb681-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb681-18"><a href="regresiones-logísticas.html#cb681-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb681-19"><a href="regresiones-logísticas.html#cb681-19" tabindex="-1"></a>                  )</span>
+<span id="cb681-20"><a href="regresiones-logísticas.html#cb681-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb681-21"><a href="regresiones-logísticas.html#cb681-21" tabindex="-1"></a></span>
+<span id="cb681-22"><a href="regresiones-logísticas.html#cb681-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb681-23"><a href="regresiones-logísticas.html#cb681-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb681-24"><a href="regresiones-logísticas.html#cb681-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -29333,33 +28077,33 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="covid-no-asintomática-leve-o-grave-8" class="section level4 hasAnchor" number="9.2.15.2">
-<h4><span class="header-section-number">9.2.15.2</span> COVID No, asintomática, leve o grave<a href="regresiones-logísticas.html#covid-no-asintomática-leve-o-grave-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="regresiones-logísticas.html#cb689-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>Sint<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb689-2"><a href="regresiones-logísticas.html#cb689-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb689-3"><a href="regresiones-logísticas.html#cb689-3" tabindex="-1"></a></span>
-<span id="cb689-4"><a href="regresiones-logísticas.html#cb689-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb689-5"><a href="regresiones-logísticas.html#cb689-5" tabindex="-1"></a>                 <span class="st">&quot;COVID asintomática&quot;</span>,</span>
-<span id="cb689-6"><a href="regresiones-logísticas.html#cb689-6" tabindex="-1"></a>                 <span class="st">&quot;COVID leve&quot;</span>,</span>
-<span id="cb689-7"><a href="regresiones-logísticas.html#cb689-7" tabindex="-1"></a>                 <span class="st">&quot;COVID grave&quot;</span>,</span>
-<span id="cb689-8"><a href="regresiones-logísticas.html#cb689-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb689-9"><a href="regresiones-logísticas.html#cb689-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb689-10"><a href="regresiones-logísticas.html#cb689-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb689-11"><a href="regresiones-logísticas.html#cb689-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb689-12"><a href="regresiones-logísticas.html#cb689-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb689-13"><a href="regresiones-logísticas.html#cb689-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb689-14"><a href="regresiones-logísticas.html#cb689-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb689-15"><a href="regresiones-logísticas.html#cb689-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb689-16"><a href="regresiones-logísticas.html#cb689-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb689-17"><a href="regresiones-logísticas.html#cb689-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb689-18"><a href="regresiones-logísticas.html#cb689-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb689-19"><a href="regresiones-logísticas.html#cb689-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb689-20"><a href="regresiones-logísticas.html#cb689-20" tabindex="-1"></a>                  )</span>
-<span id="cb689-21"><a href="regresiones-logísticas.html#cb689-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb689-22"><a href="regresiones-logísticas.html#cb689-22" tabindex="-1"></a></span>
-<span id="cb689-23"><a href="regresiones-logísticas.html#cb689-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb689-24"><a href="regresiones-logísticas.html#cb689-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb689-25"><a href="regresiones-logísticas.html#cb689-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="covid-no-asintomática-leve-o-grave-7" class="section level4 hasAnchor" number="9.2.14.2">
+<h4><span class="header-section-number">9.2.14.2</span> COVID No, asintomática, leve o grave<a href="regresiones-logísticas.html#covid-no-asintomática-leve-o-grave-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb682"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb682-1"><a href="regresiones-logísticas.html#cb682-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>Sint<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb682-2"><a href="regresiones-logísticas.html#cb682-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb682-3"><a href="regresiones-logísticas.html#cb682-3" tabindex="-1"></a></span>
+<span id="cb682-4"><a href="regresiones-logísticas.html#cb682-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb682-5"><a href="regresiones-logísticas.html#cb682-5" tabindex="-1"></a>                 <span class="st">&quot;COVID asintomática&quot;</span>,</span>
+<span id="cb682-6"><a href="regresiones-logísticas.html#cb682-6" tabindex="-1"></a>                 <span class="st">&quot;COVID leve&quot;</span>,</span>
+<span id="cb682-7"><a href="regresiones-logísticas.html#cb682-7" tabindex="-1"></a>                 <span class="st">&quot;COVID grave&quot;</span>,</span>
+<span id="cb682-8"><a href="regresiones-logísticas.html#cb682-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb682-9"><a href="regresiones-logísticas.html#cb682-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb682-10"><a href="regresiones-logísticas.html#cb682-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb682-11"><a href="regresiones-logísticas.html#cb682-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb682-12"><a href="regresiones-logísticas.html#cb682-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb682-13"><a href="regresiones-logísticas.html#cb682-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb682-14"><a href="regresiones-logísticas.html#cb682-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb682-15"><a href="regresiones-logísticas.html#cb682-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb682-16"><a href="regresiones-logísticas.html#cb682-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb682-17"><a href="regresiones-logísticas.html#cb682-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb682-18"><a href="regresiones-logísticas.html#cb682-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb682-19"><a href="regresiones-logísticas.html#cb682-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb682-20"><a href="regresiones-logísticas.html#cb682-20" tabindex="-1"></a>                  )</span>
+<span id="cb682-21"><a href="regresiones-logísticas.html#cb682-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb682-22"><a href="regresiones-logísticas.html#cb682-22" tabindex="-1"></a></span>
+<span id="cb682-23"><a href="regresiones-logísticas.html#cb682-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb682-24"><a href="regresiones-logísticas.html#cb682-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb682-25"><a href="regresiones-logísticas.html#cb682-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -29638,32 +28382,32 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="covid-ante-o-periparto-contra-no-8" class="section level4 hasAnchor" number="9.2.15.3">
-<h4><span class="header-section-number">9.2.15.3</span> COVID ante o periparto contra No<a href="regresiones-logísticas.html#covid-ante-o-periparto-contra-no-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb690"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb690-1"><a href="regresiones-logísticas.html#cb690-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>PreP<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb690-2"><a href="regresiones-logísticas.html#cb690-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb690-3"><a href="regresiones-logísticas.html#cb690-3" tabindex="-1"></a></span>
-<span id="cb690-4"><a href="regresiones-logísticas.html#cb690-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb690-5"><a href="regresiones-logísticas.html#cb690-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto&quot;</span>,</span>
-<span id="cb690-6"><a href="regresiones-logísticas.html#cb690-6" tabindex="-1"></a>                 <span class="st">&quot;COVID periparto&quot;</span>,</span>
-<span id="cb690-7"><a href="regresiones-logísticas.html#cb690-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb690-8"><a href="regresiones-logísticas.html#cb690-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb690-9"><a href="regresiones-logísticas.html#cb690-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb690-10"><a href="regresiones-logísticas.html#cb690-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb690-11"><a href="regresiones-logísticas.html#cb690-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb690-12"><a href="regresiones-logísticas.html#cb690-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb690-13"><a href="regresiones-logísticas.html#cb690-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb690-14"><a href="regresiones-logísticas.html#cb690-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb690-15"><a href="regresiones-logísticas.html#cb690-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb690-16"><a href="regresiones-logísticas.html#cb690-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb690-17"><a href="regresiones-logísticas.html#cb690-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb690-18"><a href="regresiones-logísticas.html#cb690-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb690-19"><a href="regresiones-logísticas.html#cb690-19" tabindex="-1"></a>                  )</span>
-<span id="cb690-20"><a href="regresiones-logísticas.html#cb690-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb690-21"><a href="regresiones-logísticas.html#cb690-21" tabindex="-1"></a></span>
-<span id="cb690-22"><a href="regresiones-logísticas.html#cb690-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb690-23"><a href="regresiones-logísticas.html#cb690-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb690-24"><a href="regresiones-logísticas.html#cb690-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="covid-ante-o-periparto-contra-no-7" class="section level4 hasAnchor" number="9.2.14.3">
+<h4><span class="header-section-number">9.2.14.3</span> COVID ante o periparto contra No<a href="regresiones-logísticas.html#covid-ante-o-periparto-contra-no-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="regresiones-logísticas.html#cb683-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>PreP<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb683-2"><a href="regresiones-logísticas.html#cb683-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb683-3"><a href="regresiones-logísticas.html#cb683-3" tabindex="-1"></a></span>
+<span id="cb683-4"><a href="regresiones-logísticas.html#cb683-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb683-5"><a href="regresiones-logísticas.html#cb683-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto&quot;</span>,</span>
+<span id="cb683-6"><a href="regresiones-logísticas.html#cb683-6" tabindex="-1"></a>                 <span class="st">&quot;COVID periparto&quot;</span>,</span>
+<span id="cb683-7"><a href="regresiones-logísticas.html#cb683-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb683-8"><a href="regresiones-logísticas.html#cb683-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb683-9"><a href="regresiones-logísticas.html#cb683-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb683-10"><a href="regresiones-logísticas.html#cb683-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb683-11"><a href="regresiones-logísticas.html#cb683-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb683-12"><a href="regresiones-logísticas.html#cb683-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb683-13"><a href="regresiones-logísticas.html#cb683-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb683-14"><a href="regresiones-logísticas.html#cb683-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb683-15"><a href="regresiones-logísticas.html#cb683-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb683-16"><a href="regresiones-logísticas.html#cb683-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb683-17"><a href="regresiones-logísticas.html#cb683-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb683-18"><a href="regresiones-logísticas.html#cb683-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb683-19"><a href="regresiones-logísticas.html#cb683-19" tabindex="-1"></a>                  )</span>
+<span id="cb683-20"><a href="regresiones-logísticas.html#cb683-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb683-21"><a href="regresiones-logísticas.html#cb683-21" tabindex="-1"></a></span>
+<span id="cb683-22"><a href="regresiones-logísticas.html#cb683-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb683-23"><a href="regresiones-logísticas.html#cb683-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb683-24"><a href="regresiones-logísticas.html#cb683-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -29925,33 +28669,33 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="covid-anteparto-asintomática-leve-o-grave-contra-no-covid-13" class="section level4 hasAnchor" number="9.2.15.4">
-<h4><span class="header-section-number">9.2.15.4</span> COVID anteparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-anteparto-asintomática-leve-o-grave-contra-no-covid-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="regresiones-logísticas.html#cb691-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SintPre<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb691-2"><a href="regresiones-logísticas.html#cb691-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb691-3"><a href="regresiones-logísticas.html#cb691-3" tabindex="-1"></a></span>
-<span id="cb691-4"><a href="regresiones-logísticas.html#cb691-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb691-5"><a href="regresiones-logísticas.html#cb691-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto asintomática&quot;</span>,</span>
-<span id="cb691-6"><a href="regresiones-logísticas.html#cb691-6" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto leve&quot;</span>,</span>
-<span id="cb691-7"><a href="regresiones-logísticas.html#cb691-7" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto grave&quot;</span>,</span>
-<span id="cb691-8"><a href="regresiones-logísticas.html#cb691-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb691-9"><a href="regresiones-logísticas.html#cb691-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb691-10"><a href="regresiones-logísticas.html#cb691-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb691-11"><a href="regresiones-logísticas.html#cb691-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb691-12"><a href="regresiones-logísticas.html#cb691-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb691-13"><a href="regresiones-logísticas.html#cb691-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb691-14"><a href="regresiones-logísticas.html#cb691-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb691-15"><a href="regresiones-logísticas.html#cb691-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb691-16"><a href="regresiones-logísticas.html#cb691-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb691-17"><a href="regresiones-logísticas.html#cb691-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb691-18"><a href="regresiones-logísticas.html#cb691-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb691-19"><a href="regresiones-logísticas.html#cb691-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb691-20"><a href="regresiones-logísticas.html#cb691-20" tabindex="-1"></a>                  )</span>
-<span id="cb691-21"><a href="regresiones-logísticas.html#cb691-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb691-22"><a href="regresiones-logísticas.html#cb691-22" tabindex="-1"></a></span>
-<span id="cb691-23"><a href="regresiones-logísticas.html#cb691-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb691-24"><a href="regresiones-logísticas.html#cb691-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb691-25"><a href="regresiones-logísticas.html#cb691-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="covid-anteparto-asintomática-leve-o-grave-contra-no-covid-12" class="section level4 hasAnchor" number="9.2.14.4">
+<h4><span class="header-section-number">9.2.14.4</span> COVID anteparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-anteparto-asintomática-leve-o-grave-contra-no-covid-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb684"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb684-1"><a href="regresiones-logísticas.html#cb684-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SintPre<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb684-2"><a href="regresiones-logísticas.html#cb684-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb684-3"><a href="regresiones-logísticas.html#cb684-3" tabindex="-1"></a></span>
+<span id="cb684-4"><a href="regresiones-logísticas.html#cb684-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb684-5"><a href="regresiones-logísticas.html#cb684-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto asintomática&quot;</span>,</span>
+<span id="cb684-6"><a href="regresiones-logísticas.html#cb684-6" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto leve&quot;</span>,</span>
+<span id="cb684-7"><a href="regresiones-logísticas.html#cb684-7" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto grave&quot;</span>,</span>
+<span id="cb684-8"><a href="regresiones-logísticas.html#cb684-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb684-9"><a href="regresiones-logísticas.html#cb684-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb684-10"><a href="regresiones-logísticas.html#cb684-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb684-11"><a href="regresiones-logísticas.html#cb684-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb684-12"><a href="regresiones-logísticas.html#cb684-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb684-13"><a href="regresiones-logísticas.html#cb684-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb684-14"><a href="regresiones-logísticas.html#cb684-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb684-15"><a href="regresiones-logísticas.html#cb684-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb684-16"><a href="regresiones-logísticas.html#cb684-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb684-17"><a href="regresiones-logísticas.html#cb684-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb684-18"><a href="regresiones-logísticas.html#cb684-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb684-19"><a href="regresiones-logísticas.html#cb684-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb684-20"><a href="regresiones-logísticas.html#cb684-20" tabindex="-1"></a>                  )</span>
+<span id="cb684-21"><a href="regresiones-logísticas.html#cb684-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb684-22"><a href="regresiones-logísticas.html#cb684-22" tabindex="-1"></a></span>
+<span id="cb684-23"><a href="regresiones-logísticas.html#cb684-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb684-24"><a href="regresiones-logísticas.html#cb684-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb684-25"><a href="regresiones-logísticas.html#cb684-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -30230,33 +28974,33 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="covid-periparto-asintomática-leve-o-grave-contra-no-covid-13" class="section level4 hasAnchor" number="9.2.15.5">
-<h4><span class="header-section-number">9.2.15.5</span> COVID periparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-periparto-asintomática-leve-o-grave-contra-no-covid-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb692"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb692-1"><a href="regresiones-logísticas.html#cb692-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SintPeri<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb692-2"><a href="regresiones-logísticas.html#cb692-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb692-3"><a href="regresiones-logísticas.html#cb692-3" tabindex="-1"></a></span>
-<span id="cb692-4"><a href="regresiones-logísticas.html#cb692-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb692-5"><a href="regresiones-logísticas.html#cb692-5" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto asintomática&quot;</span>,</span>
-<span id="cb692-6"><a href="regresiones-logísticas.html#cb692-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto leve&quot;</span>,</span>
-<span id="cb692-7"><a href="regresiones-logísticas.html#cb692-7" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto grave&quot;</span>,</span>
-<span id="cb692-8"><a href="regresiones-logísticas.html#cb692-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb692-9"><a href="regresiones-logísticas.html#cb692-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb692-10"><a href="regresiones-logísticas.html#cb692-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb692-11"><a href="regresiones-logísticas.html#cb692-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb692-12"><a href="regresiones-logísticas.html#cb692-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb692-13"><a href="regresiones-logísticas.html#cb692-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb692-14"><a href="regresiones-logísticas.html#cb692-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb692-15"><a href="regresiones-logísticas.html#cb692-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb692-16"><a href="regresiones-logísticas.html#cb692-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb692-17"><a href="regresiones-logísticas.html#cb692-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb692-18"><a href="regresiones-logísticas.html#cb692-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb692-19"><a href="regresiones-logísticas.html#cb692-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb692-20"><a href="regresiones-logísticas.html#cb692-20" tabindex="-1"></a>                  )</span>
-<span id="cb692-21"><a href="regresiones-logísticas.html#cb692-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb692-22"><a href="regresiones-logísticas.html#cb692-22" tabindex="-1"></a></span>
-<span id="cb692-23"><a href="regresiones-logísticas.html#cb692-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb692-24"><a href="regresiones-logísticas.html#cb692-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb692-25"><a href="regresiones-logísticas.html#cb692-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="covid-periparto-asintomática-leve-o-grave-contra-no-covid-12" class="section level4 hasAnchor" number="9.2.14.5">
+<h4><span class="header-section-number">9.2.14.5</span> COVID periparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-periparto-asintomática-leve-o-grave-contra-no-covid-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="regresiones-logísticas.html#cb685-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SintPeri<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb685-2"><a href="regresiones-logísticas.html#cb685-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb685-3"><a href="regresiones-logísticas.html#cb685-3" tabindex="-1"></a></span>
+<span id="cb685-4"><a href="regresiones-logísticas.html#cb685-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb685-5"><a href="regresiones-logísticas.html#cb685-5" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto asintomática&quot;</span>,</span>
+<span id="cb685-6"><a href="regresiones-logísticas.html#cb685-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto leve&quot;</span>,</span>
+<span id="cb685-7"><a href="regresiones-logísticas.html#cb685-7" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto grave&quot;</span>,</span>
+<span id="cb685-8"><a href="regresiones-logísticas.html#cb685-8" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb685-9"><a href="regresiones-logísticas.html#cb685-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb685-10"><a href="regresiones-logísticas.html#cb685-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb685-11"><a href="regresiones-logísticas.html#cb685-11" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb685-12"><a href="regresiones-logísticas.html#cb685-12" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb685-13"><a href="regresiones-logísticas.html#cb685-13" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb685-14"><a href="regresiones-logísticas.html#cb685-14" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb685-15"><a href="regresiones-logísticas.html#cb685-15" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb685-16"><a href="regresiones-logísticas.html#cb685-16" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb685-17"><a href="regresiones-logísticas.html#cb685-17" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb685-18"><a href="regresiones-logísticas.html#cb685-18" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb685-19"><a href="regresiones-logísticas.html#cb685-19" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb685-20"><a href="regresiones-logísticas.html#cb685-20" tabindex="-1"></a>                  )</span>
+<span id="cb685-21"><a href="regresiones-logísticas.html#cb685-21" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb685-22"><a href="regresiones-logísticas.html#cb685-22" tabindex="-1"></a></span>
+<span id="cb685-23"><a href="regresiones-logísticas.html#cb685-23" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb685-24"><a href="regresiones-logísticas.html#cb685-24" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb685-25"><a href="regresiones-logísticas.html#cb685-25" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -30535,32 +29279,32 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="ola-12" class="section level4 hasAnchor" number="9.2.15.6">
-<h4><span class="header-section-number">9.2.15.6</span> Ola<a href="regresiones-logísticas.html#ola-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="regresiones-logísticas.html#cb693-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SegundOla<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
-<span id="cb693-2"><a href="regresiones-logísticas.html#cb693-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb693-3"><a href="regresiones-logísticas.html#cb693-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb693-4"><a href="regresiones-logísticas.html#cb693-4" tabindex="-1"></a></span>
-<span id="cb693-5"><a href="regresiones-logísticas.html#cb693-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb693-6"><a href="regresiones-logísticas.html#cb693-6" tabindex="-1"></a>                 <span class="st">&quot;2a ola rel a 1a ola&quot;</span>,</span>
-<span id="cb693-7"><a href="regresiones-logísticas.html#cb693-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb693-8"><a href="regresiones-logísticas.html#cb693-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb693-9"><a href="regresiones-logísticas.html#cb693-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb693-10"><a href="regresiones-logísticas.html#cb693-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb693-11"><a href="regresiones-logísticas.html#cb693-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb693-12"><a href="regresiones-logísticas.html#cb693-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb693-13"><a href="regresiones-logísticas.html#cb693-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb693-14"><a href="regresiones-logísticas.html#cb693-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb693-15"><a href="regresiones-logísticas.html#cb693-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb693-16"><a href="regresiones-logísticas.html#cb693-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb693-17"><a href="regresiones-logísticas.html#cb693-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb693-18"><a href="regresiones-logísticas.html#cb693-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb693-19"><a href="regresiones-logísticas.html#cb693-19" tabindex="-1"></a>                  )</span>
-<span id="cb693-20"><a href="regresiones-logísticas.html#cb693-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb693-21"><a href="regresiones-logísticas.html#cb693-21" tabindex="-1"></a></span>
-<span id="cb693-22"><a href="regresiones-logísticas.html#cb693-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb693-23"><a href="regresiones-logísticas.html#cb693-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb693-24"><a href="regresiones-logísticas.html#cb693-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="ola-11" class="section level4 hasAnchor" number="9.2.14.6">
+<h4><span class="header-section-number">9.2.14.6</span> Ola<a href="regresiones-logísticas.html#ola-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb686"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb686-1"><a href="regresiones-logísticas.html#cb686-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SegundOla<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
+<span id="cb686-2"><a href="regresiones-logísticas.html#cb686-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb686-3"><a href="regresiones-logísticas.html#cb686-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb686-4"><a href="regresiones-logísticas.html#cb686-4" tabindex="-1"></a></span>
+<span id="cb686-5"><a href="regresiones-logísticas.html#cb686-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb686-6"><a href="regresiones-logísticas.html#cb686-6" tabindex="-1"></a>                 <span class="st">&quot;2a ola rel a 1a ola&quot;</span>,</span>
+<span id="cb686-7"><a href="regresiones-logísticas.html#cb686-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb686-8"><a href="regresiones-logísticas.html#cb686-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb686-9"><a href="regresiones-logísticas.html#cb686-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb686-10"><a href="regresiones-logísticas.html#cb686-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb686-11"><a href="regresiones-logísticas.html#cb686-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb686-12"><a href="regresiones-logísticas.html#cb686-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb686-13"><a href="regresiones-logísticas.html#cb686-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb686-14"><a href="regresiones-logísticas.html#cb686-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb686-15"><a href="regresiones-logísticas.html#cb686-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb686-16"><a href="regresiones-logísticas.html#cb686-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb686-17"><a href="regresiones-logísticas.html#cb686-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb686-18"><a href="regresiones-logísticas.html#cb686-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb686-19"><a href="regresiones-logísticas.html#cb686-19" tabindex="-1"></a>                  )</span>
+<span id="cb686-20"><a href="regresiones-logísticas.html#cb686-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb686-21"><a href="regresiones-logísticas.html#cb686-21" tabindex="-1"></a></span>
+<span id="cb686-22"><a href="regresiones-logísticas.html#cb686-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb686-23"><a href="regresiones-logísticas.html#cb686-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb686-24"><a href="regresiones-logísticas.html#cb686-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -30805,32 +29549,32 @@ PE con CG
 </tbody>
 </table>
 </div>
-<div id="infección-y-ola-13" class="section level4 hasAnchor" number="9.2.15.7">
-<h4><span class="header-section-number">9.2.15.7</span> Infección y ola<a href="regresiones-logísticas.html#infección-y-ola-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb694"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb694-1"><a href="regresiones-logísticas.html#cb694-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SegundOla<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
-<span id="cb694-2"><a href="regresiones-logísticas.html#cb694-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños[DFL.niños<span class="sc">$</span>COVID<span class="sc">==</span><span class="dv">1</span>,],<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb694-3"><a href="regresiones-logísticas.html#cb694-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
-<span id="cb694-4"><a href="regresiones-logísticas.html#cb694-4" tabindex="-1"></a></span>
-<span id="cb694-5"><a href="regresiones-logísticas.html#cb694-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
-<span id="cb694-6"><a href="regresiones-logísticas.html#cb694-6" tabindex="-1"></a>                 <span class="st">&quot;Infectadas 2a ola rel a infectadas 1a ola&quot;</span>,</span>
-<span id="cb694-7"><a href="regresiones-logísticas.html#cb694-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
-<span id="cb694-8"><a href="regresiones-logísticas.html#cb694-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
-<span id="cb694-9"><a href="regresiones-logísticas.html#cb694-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
-<span id="cb694-10"><a href="regresiones-logísticas.html#cb694-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
-<span id="cb694-11"><a href="regresiones-logísticas.html#cb694-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
-<span id="cb694-12"><a href="regresiones-logísticas.html#cb694-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
-<span id="cb694-13"><a href="regresiones-logísticas.html#cb694-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
-<span id="cb694-14"><a href="regresiones-logísticas.html#cb694-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
-<span id="cb694-15"><a href="regresiones-logísticas.html#cb694-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
-<span id="cb694-16"><a href="regresiones-logísticas.html#cb694-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
-<span id="cb694-17"><a href="regresiones-logísticas.html#cb694-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
-<span id="cb694-18"><a href="regresiones-logísticas.html#cb694-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
-<span id="cb694-19"><a href="regresiones-logísticas.html#cb694-19" tabindex="-1"></a>                  )</span>
-<span id="cb694-20"><a href="regresiones-logísticas.html#cb694-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
-<span id="cb694-21"><a href="regresiones-logísticas.html#cb694-21" tabindex="-1"></a></span>
-<span id="cb694-22"><a href="regresiones-logísticas.html#cb694-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
-<span id="cb694-23"><a href="regresiones-logísticas.html#cb694-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb694-24"><a href="regresiones-logísticas.html#cb694-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div id="infección-y-ola-12" class="section level4 hasAnchor" number="9.2.14.7">
+<h4><span class="header-section-number">9.2.14.7</span> Infección y ola<a href="regresiones-logísticas.html#infección-y-ola-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="regresiones-logísticas.html#cb687-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(PesosP<span class="sc">~</span>SegundOla<span class="sc">+</span>Etnias<span class="sc">+</span>Fumadora<span class="sc">+</span>Obesidad<span class="sc">+</span>Diabetes<span class="sc">+</span>GM<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>Preeclampsia.grave,</span>
+<span id="cb687-2"><a href="regresiones-logísticas.html#cb687-2" tabindex="-1"></a>              <span class="at">data=</span>DFL.niños[DFL.niños<span class="sc">$</span>COVID<span class="sc">==</span><span class="dv">1</span>,],<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb687-3"><a href="regresiones-logísticas.html#cb687-3" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb687-4"><a href="regresiones-logísticas.html#cb687-4" tabindex="-1"></a></span>
+<span id="cb687-5"><a href="regresiones-logísticas.html#cb687-5" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb687-6"><a href="regresiones-logísticas.html#cb687-6" tabindex="-1"></a>                 <span class="st">&quot;Infectadas 2a ola rel a infectadas 1a ola&quot;</span>,</span>
+<span id="cb687-7"><a href="regresiones-logísticas.html#cb687-7" tabindex="-1"></a>                <span class="st">&quot;Etnia: Árabe rel. a blanca&quot;</span>,</span>
+<span id="cb687-8"><a href="regresiones-logísticas.html#cb687-8" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Asiática rel. a blanca&quot;</span>,</span>
+<span id="cb687-9"><a href="regresiones-logísticas.html#cb687-9" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Latinoamericana rel. a blanca&quot;</span>,</span>
+<span id="cb687-10"><a href="regresiones-logísticas.html#cb687-10" tabindex="-1"></a>                 <span class="st">&quot;Etnia: Negra rel. a blanca&quot;</span>,</span>
+<span id="cb687-11"><a href="regresiones-logísticas.html#cb687-11" tabindex="-1"></a>                 <span class="st">&quot;Tabaquismo&quot;</span>,</span>
+<span id="cb687-12"><a href="regresiones-logísticas.html#cb687-12" tabindex="-1"></a>                 <span class="st">&quot;Obesidad&quot;</span>,</span>
+<span id="cb687-13"><a href="regresiones-logísticas.html#cb687-13" tabindex="-1"></a>                 <span class="st">&quot;DM&quot;</span>,</span>
+<span id="cb687-14"><a href="regresiones-logísticas.html#cb687-14" tabindex="-1"></a>                <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb687-15"><a href="regresiones-logísticas.html#cb687-15" tabindex="-1"></a>                <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb687-16"><a href="regresiones-logísticas.html#cb687-16" tabindex="-1"></a>                <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb687-17"><a href="regresiones-logísticas.html#cb687-17" tabindex="-1"></a>                <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb687-18"><a href="regresiones-logísticas.html#cb687-18" tabindex="-1"></a>                <span class="st">&quot;PE con CG&quot;</span></span>
+<span id="cb687-19"><a href="regresiones-logísticas.html#cb687-19" tabindex="-1"></a>                  )</span>
+<span id="cb687-20"><a href="regresiones-logísticas.html#cb687-20" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb687-21"><a href="regresiones-logísticas.html#cb687-21" tabindex="-1"></a></span>
+<span id="cb687-22"><a href="regresiones-logísticas.html#cb687-22" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb687-23"><a href="regresiones-logísticas.html#cb687-23" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb687-24"><a href="regresiones-logísticas.html#cb687-24" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -31070,6 +29814,1262 @@ PE con CG
 </td>
 <td style="text-align:left;">
 0.09941098
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="uci-neonatal" class="section level3 hasAnchor" number="9.2.15">
+<h3><span class="header-section-number">9.2.15</span> UCI neonatal<a href="regresiones-logísticas.html#uci-neonatal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="covid-sí-o-no-14" class="section level4 hasAnchor" number="9.2.15.1">
+<h4><span class="header-section-number">9.2.15.1</span> COVID Sí o No<a href="regresiones-logísticas.html#covid-sí-o-no-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb688"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb688-1"><a href="regresiones-logísticas.html#cb688-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>COVID<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb688-2"><a href="regresiones-logísticas.html#cb688-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb688-3"><a href="regresiones-logísticas.html#cb688-3" tabindex="-1"></a></span>
+<span id="cb688-4"><a href="regresiones-logísticas.html#cb688-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb688-5"><a href="regresiones-logísticas.html#cb688-5" tabindex="-1"></a>                 <span class="st">&quot;COVID&quot;</span>,</span>
+<span id="cb688-6"><a href="regresiones-logísticas.html#cb688-6" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb688-7"><a href="regresiones-logísticas.html#cb688-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb688-8"><a href="regresiones-logísticas.html#cb688-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb688-9"><a href="regresiones-logísticas.html#cb688-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb688-10"><a href="regresiones-logísticas.html#cb688-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb688-11"><a href="regresiones-logísticas.html#cb688-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb688-12"><a href="regresiones-logísticas.html#cb688-12" tabindex="-1"></a>                  )</span>
+<span id="cb688-13"><a href="regresiones-logísticas.html#cb688-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb688-14"><a href="regresiones-logísticas.html#cb688-14" tabindex="-1"></a></span>
+<span id="cb688-15"><a href="regresiones-logísticas.html#cb688-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb688-16"><a href="regresiones-logísticas.html#cb688-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb688-17"><a href="regresiones-logísticas.html#cb688-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COVID
+</td>
+<td style="text-align:right;">
+3.352
+</td>
+<td style="text-align:right;">
+2.203
+</td>
+<td style="text-align:right;">
+5.099
+</td>
+<td style="text-align:left;">
+2e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+3.466
+</td>
+<td style="text-align:right;">
+1.986
+</td>
+<td style="text-align:right;">
+6.048
+</td>
+<td style="text-align:left;">
+1.213e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+9.536
+</td>
+<td style="text-align:right;">
+5.741
+</td>
+<td style="text-align:right;">
+15.839
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+9.937
+</td>
+<td style="text-align:right;">
+4.260
+</td>
+<td style="text-align:right;">
+23.177
+</td>
+<td style="text-align:left;">
+1.1e-07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.343
+</td>
+<td style="text-align:right;">
+0.654
+</td>
+<td style="text-align:right;">
+2.755
+</td>
+<td style="text-align:left;">
+0.42183132
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.743
+</td>
+<td style="text-align:right;">
+0.375
+</td>
+<td style="text-align:right;">
+1.471
+</td>
+<td style="text-align:left;">
+0.39427338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.071
+</td>
+<td style="text-align:right;">
+0.034
+</td>
+<td style="text-align:right;">
+0.150
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="covid-no-asintomática-leve-o-grave-8" class="section level4 hasAnchor" number="9.2.15.2">
+<h4><span class="header-section-number">9.2.15.2</span> COVID No, asintomática, leve o grave<a href="regresiones-logísticas.html#covid-no-asintomática-leve-o-grave-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="regresiones-logísticas.html#cb689-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>Sint<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb689-2"><a href="regresiones-logísticas.html#cb689-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb689-3"><a href="regresiones-logísticas.html#cb689-3" tabindex="-1"></a></span>
+<span id="cb689-4"><a href="regresiones-logísticas.html#cb689-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb689-5"><a href="regresiones-logísticas.html#cb689-5" tabindex="-1"></a>                 <span class="st">&quot;COVID asintomática&quot;</span>,</span>
+<span id="cb689-6"><a href="regresiones-logísticas.html#cb689-6" tabindex="-1"></a>                 <span class="st">&quot;COVID leve&quot;</span>,</span>
+<span id="cb689-7"><a href="regresiones-logísticas.html#cb689-7" tabindex="-1"></a>                 <span class="st">&quot;COVID grave&quot;</span>,</span>
+<span id="cb689-8"><a href="regresiones-logísticas.html#cb689-8" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb689-9"><a href="regresiones-logísticas.html#cb689-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb689-10"><a href="regresiones-logísticas.html#cb689-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb689-11"><a href="regresiones-logísticas.html#cb689-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb689-12"><a href="regresiones-logísticas.html#cb689-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb689-13"><a href="regresiones-logísticas.html#cb689-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb689-14"><a href="regresiones-logísticas.html#cb689-14" tabindex="-1"></a>                  )</span>
+<span id="cb689-15"><a href="regresiones-logísticas.html#cb689-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb689-16"><a href="regresiones-logísticas.html#cb689-16" tabindex="-1"></a></span>
+<span id="cb689-17"><a href="regresiones-logísticas.html#cb689-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb689-18"><a href="regresiones-logísticas.html#cb689-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb689-19"><a href="regresiones-logísticas.html#cb689-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COVID asintomática
+</td>
+<td style="text-align:right;">
+2.551
+</td>
+<td style="text-align:right;">
+1.537
+</td>
+<td style="text-align:right;">
+4.234
+</td>
+<td style="text-align:left;">
+0.00029308
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID leve
+</td>
+<td style="text-align:right;">
+3.191
+</td>
+<td style="text-align:right;">
+1.931
+</td>
+<td style="text-align:right;">
+5.271
+</td>
+<td style="text-align:left;">
+5.89e-06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID grave
+</td>
+<td style="text-align:right;">
+5.964
+</td>
+<td style="text-align:right;">
+3.402
+</td>
+<td style="text-align:right;">
+10.455
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+3.522
+</td>
+<td style="text-align:right;">
+2.008
+</td>
+<td style="text-align:right;">
+6.177
+</td>
+<td style="text-align:left;">
+1.12e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+8.986
+</td>
+<td style="text-align:right;">
+5.393
+</td>
+<td style="text-align:right;">
+14.972
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+10.326
+</td>
+<td style="text-align:right;">
+4.451
+</td>
+<td style="text-align:right;">
+23.955
+</td>
+<td style="text-align:left;">
+5e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.422
+</td>
+<td style="text-align:right;">
+0.689
+</td>
+<td style="text-align:right;">
+2.938
+</td>
+<td style="text-align:left;">
+0.34126722
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.757
+</td>
+<td style="text-align:right;">
+0.381
+</td>
+<td style="text-align:right;">
+1.502
+</td>
+<td style="text-align:left;">
+0.425127
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.069
+</td>
+<td style="text-align:right;">
+0.033
+</td>
+<td style="text-align:right;">
+0.147
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="covid-ante-o-periparto-contra-no-8" class="section level4 hasAnchor" number="9.2.15.3">
+<h4><span class="header-section-number">9.2.15.3</span> COVID ante o periparto contra No<a href="regresiones-logísticas.html#covid-ante-o-periparto-contra-no-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb690"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb690-1"><a href="regresiones-logísticas.html#cb690-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>PreP<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb690-2"><a href="regresiones-logísticas.html#cb690-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb690-3"><a href="regresiones-logísticas.html#cb690-3" tabindex="-1"></a></span>
+<span id="cb690-4"><a href="regresiones-logísticas.html#cb690-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb690-5"><a href="regresiones-logísticas.html#cb690-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto&quot;</span>,</span>
+<span id="cb690-6"><a href="regresiones-logísticas.html#cb690-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto&quot;</span>,</span>
+<span id="cb690-7"><a href="regresiones-logísticas.html#cb690-7" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb690-8"><a href="regresiones-logísticas.html#cb690-8" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb690-9"><a href="regresiones-logísticas.html#cb690-9" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb690-10"><a href="regresiones-logísticas.html#cb690-10" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb690-11"><a href="regresiones-logísticas.html#cb690-11" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb690-12"><a href="regresiones-logísticas.html#cb690-12" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb690-13"><a href="regresiones-logísticas.html#cb690-13" tabindex="-1"></a>                  )</span>
+<span id="cb690-14"><a href="regresiones-logísticas.html#cb690-14" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb690-15"><a href="regresiones-logísticas.html#cb690-15" tabindex="-1"></a></span>
+<span id="cb690-16"><a href="regresiones-logísticas.html#cb690-16" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb690-17"><a href="regresiones-logísticas.html#cb690-17" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb690-18"><a href="regresiones-logísticas.html#cb690-18" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COVID anteparto
+</td>
+<td style="text-align:right;">
+2.648
+</td>
+<td style="text-align:right;">
+1.646
+</td>
+<td style="text-align:right;">
+4.261
+</td>
+<td style="text-align:left;">
+5.979e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID periparto
+</td>
+<td style="text-align:right;">
+4.297
+</td>
+<td style="text-align:right;">
+2.689
+</td>
+<td style="text-align:right;">
+6.866
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+3.404
+</td>
+<td style="text-align:right;">
+1.950
+</td>
+<td style="text-align:right;">
+5.941
+</td>
+<td style="text-align:left;">
+1.631e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+9.642
+</td>
+<td style="text-align:right;">
+5.809
+</td>
+<td style="text-align:right;">
+16.005
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+10.180
+</td>
+<td style="text-align:right;">
+4.329
+</td>
+<td style="text-align:right;">
+23.940
+</td>
+<td style="text-align:left;">
+1e-07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.433
+</td>
+<td style="text-align:right;">
+0.700
+</td>
+<td style="text-align:right;">
+2.934
+</td>
+<td style="text-align:left;">
+0.32492412
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.790
+</td>
+<td style="text-align:right;">
+0.398
+</td>
+<td style="text-align:right;">
+1.566
+</td>
+<td style="text-align:left;">
+0.49920657
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.075
+</td>
+<td style="text-align:right;">
+0.036
+</td>
+<td style="text-align:right;">
+0.159
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="covid-anteparto-asintomática-leve-o-grave-contra-no-covid-13" class="section level4 hasAnchor" number="9.2.15.4">
+<h4><span class="header-section-number">9.2.15.4</span> COVID anteparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-anteparto-asintomática-leve-o-grave-contra-no-covid-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="regresiones-logísticas.html#cb691-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SintPre<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb691-2"><a href="regresiones-logísticas.html#cb691-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb691-3"><a href="regresiones-logísticas.html#cb691-3" tabindex="-1"></a></span>
+<span id="cb691-4"><a href="regresiones-logísticas.html#cb691-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb691-5"><a href="regresiones-logísticas.html#cb691-5" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto asintomática&quot;</span>,</span>
+<span id="cb691-6"><a href="regresiones-logísticas.html#cb691-6" tabindex="-1"></a>                  <span class="st">&quot;COVID anteparto leve&quot;</span>,</span>
+<span id="cb691-7"><a href="regresiones-logísticas.html#cb691-7" tabindex="-1"></a>                 <span class="st">&quot;COVID anteparto grave&quot;</span>,</span>
+<span id="cb691-8"><a href="regresiones-logísticas.html#cb691-8" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb691-9"><a href="regresiones-logísticas.html#cb691-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb691-10"><a href="regresiones-logísticas.html#cb691-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb691-11"><a href="regresiones-logísticas.html#cb691-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb691-12"><a href="regresiones-logísticas.html#cb691-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb691-13"><a href="regresiones-logísticas.html#cb691-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb691-14"><a href="regresiones-logísticas.html#cb691-14" tabindex="-1"></a>                  )</span>
+<span id="cb691-15"><a href="regresiones-logísticas.html#cb691-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb691-16"><a href="regresiones-logísticas.html#cb691-16" tabindex="-1"></a></span>
+<span id="cb691-17"><a href="regresiones-logísticas.html#cb691-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb691-18"><a href="regresiones-logísticas.html#cb691-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb691-19"><a href="regresiones-logísticas.html#cb691-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COVID anteparto asintomática
+</td>
+<td style="text-align:right;">
+1.743
+</td>
+<td style="text-align:right;">
+0.811
+</td>
+<td style="text-align:right;">
+3.750
+</td>
+<td style="text-align:left;">
+0.15490716
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID anteparto leve
+</td>
+<td style="text-align:right;">
+3.073
+</td>
+<td style="text-align:right;">
+1.775
+</td>
+<td style="text-align:right;">
+5.319
+</td>
+<td style="text-align:left;">
+6.07e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID anteparto grave
+</td>
+<td style="text-align:right;">
+2.832
+</td>
+<td style="text-align:right;">
+1.388
+</td>
+<td style="text-align:right;">
+5.781
+</td>
+<td style="text-align:left;">
+0.00423834
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+3.191
+</td>
+<td style="text-align:right;">
+1.534
+</td>
+<td style="text-align:right;">
+6.636
+</td>
+<td style="text-align:left;">
+0.0018997
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+10.174
+</td>
+<td style="text-align:right;">
+5.238
+</td>
+<td style="text-align:right;">
+19.764
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+11.162
+</td>
+<td style="text-align:right;">
+4.121
+</td>
+<td style="text-align:right;">
+30.231
+</td>
+<td style="text-align:left;">
+2.08e-06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.219
+</td>
+<td style="text-align:right;">
+0.513
+</td>
+<td style="text-align:right;">
+2.894
+</td>
+<td style="text-align:left;">
+0.65401394
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.570
+</td>
+<td style="text-align:right;">
+0.246
+</td>
+<td style="text-align:right;">
+1.322
+</td>
+<td style="text-align:left;">
+0.19009128
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.097
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.255
+</td>
+<td style="text-align:left;">
+2.34e-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="covid-periparto-asintomática-leve-o-grave-contra-no-covid-13" class="section level4 hasAnchor" number="9.2.15.5">
+<h4><span class="header-section-number">9.2.15.5</span> COVID periparto asintomática, leve o grave contra No COVID<a href="regresiones-logísticas.html#covid-periparto-asintomática-leve-o-grave-contra-no-covid-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb692"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb692-1"><a href="regresiones-logísticas.html#cb692-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SintPeri<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb692-2"><a href="regresiones-logísticas.html#cb692-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb692-3"><a href="regresiones-logísticas.html#cb692-3" tabindex="-1"></a></span>
+<span id="cb692-4"><a href="regresiones-logísticas.html#cb692-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb692-5"><a href="regresiones-logísticas.html#cb692-5" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto asintomática&quot;</span>,</span>
+<span id="cb692-6"><a href="regresiones-logísticas.html#cb692-6" tabindex="-1"></a>                  <span class="st">&quot;COVID periparto leve&quot;</span>,</span>
+<span id="cb692-7"><a href="regresiones-logísticas.html#cb692-7" tabindex="-1"></a>                 <span class="st">&quot;COVID periparto grave&quot;</span>,</span>
+<span id="cb692-8"><a href="regresiones-logísticas.html#cb692-8" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb692-9"><a href="regresiones-logísticas.html#cb692-9" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb692-10"><a href="regresiones-logísticas.html#cb692-10" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb692-11"><a href="regresiones-logísticas.html#cb692-11" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb692-12"><a href="regresiones-logísticas.html#cb692-12" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb692-13"><a href="regresiones-logísticas.html#cb692-13" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb692-14"><a href="regresiones-logísticas.html#cb692-14" tabindex="-1"></a>                  )</span>
+<span id="cb692-15"><a href="regresiones-logísticas.html#cb692-15" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb692-16"><a href="regresiones-logísticas.html#cb692-16" tabindex="-1"></a></span>
+<span id="cb692-17"><a href="regresiones-logísticas.html#cb692-17" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb692-18"><a href="regresiones-logísticas.html#cb692-18" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb692-19"><a href="regresiones-logísticas.html#cb692-19" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COVID periparto asintomática
+</td>
+<td style="text-align:right;">
+3.502
+</td>
+<td style="text-align:right;">
+1.967
+</td>
+<td style="text-align:right;">
+6.233
+</td>
+<td style="text-align:left;">
+2.043e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID periparto leve
+</td>
+<td style="text-align:right;">
+3.479
+</td>
+<td style="text-align:right;">
+1.609
+</td>
+<td style="text-align:right;">
+7.520
+</td>
+<td style="text-align:left;">
+0.001527
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COVID periparto grave
+</td>
+<td style="text-align:right;">
+18.843
+</td>
+<td style="text-align:right;">
+8.679
+</td>
+<td style="text-align:right;">
+40.913
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+2.828
+</td>
+<td style="text-align:right;">
+1.408
+</td>
+<td style="text-align:right;">
+5.680
+</td>
+<td style="text-align:left;">
+0.00348059
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+11.901
+</td>
+<td style="text-align:right;">
+6.346
+</td>
+<td style="text-align:right;">
+22.317
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+6.344
+</td>
+<td style="text-align:right;">
+1.645
+</td>
+<td style="text-align:right;">
+24.464
+</td>
+<td style="text-align:left;">
+0.00729326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.897
+</td>
+<td style="text-align:right;">
+0.699
+</td>
+<td style="text-align:right;">
+5.150
+</td>
+<td style="text-align:left;">
+0.20892049
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+1.782
+</td>
+<td style="text-align:right;">
+0.763
+</td>
+<td style="text-align:right;">
+4.158
+</td>
+<td style="text-align:left;">
+0.18179115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.053
+</td>
+<td style="text-align:right;">
+0.022
+</td>
+<td style="text-align:right;">
+0.127
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ola-12" class="section level4 hasAnchor" number="9.2.15.6">
+<h4><span class="header-section-number">9.2.15.6</span> Ola<a href="regresiones-logísticas.html#ola-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="regresiones-logísticas.html#cb693-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SegundOla<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb693-2"><a href="regresiones-logísticas.html#cb693-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb693-3"><a href="regresiones-logísticas.html#cb693-3" tabindex="-1"></a></span>
+<span id="cb693-4"><a href="regresiones-logísticas.html#cb693-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb693-5"><a href="regresiones-logísticas.html#cb693-5" tabindex="-1"></a>                 <span class="st">&quot;2a ola rel a 1a ola&quot;</span>,</span>
+<span id="cb693-6"><a href="regresiones-logísticas.html#cb693-6" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb693-7"><a href="regresiones-logísticas.html#cb693-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb693-8"><a href="regresiones-logísticas.html#cb693-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb693-9"><a href="regresiones-logísticas.html#cb693-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb693-10"><a href="regresiones-logísticas.html#cb693-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb693-11"><a href="regresiones-logísticas.html#cb693-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb693-12"><a href="regresiones-logísticas.html#cb693-12" tabindex="-1"></a>                  )</span>
+<span id="cb693-13"><a href="regresiones-logísticas.html#cb693-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb693-14"><a href="regresiones-logísticas.html#cb693-14" tabindex="-1"></a></span>
+<span id="cb693-15"><a href="regresiones-logísticas.html#cb693-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb693-16"><a href="regresiones-logísticas.html#cb693-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb693-17"><a href="regresiones-logísticas.html#cb693-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2a ola rel a 1a ola
+</td>
+<td style="text-align:right;">
+0.998
+</td>
+<td style="text-align:right;">
+0.683
+</td>
+<td style="text-align:right;">
+1.459
+</td>
+<td style="text-align:left;">
+0.99336874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+3.688
+</td>
+<td style="text-align:right;">
+2.146
+</td>
+<td style="text-align:right;">
+6.336
+</td>
+<td style="text-align:left;">
+2.3e-06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+9.926
+</td>
+<td style="text-align:right;">
+6.070
+</td>
+<td style="text-align:right;">
+16.231
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+10.731
+</td>
+<td style="text-align:right;">
+4.710
+</td>
+<td style="text-align:right;">
+24.452
+</td>
+<td style="text-align:left;">
+2e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.332
+</td>
+<td style="text-align:right;">
+0.659
+</td>
+<td style="text-align:right;">
+2.693
+</td>
+<td style="text-align:left;">
+0.42491542
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.682
+</td>
+<td style="text-align:right;">
+0.353
+</td>
+<td style="text-align:right;">
+1.320
+</td>
+<td style="text-align:left;">
+0.25633301
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.076
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.156
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="infección-y-ola-13" class="section level4 hasAnchor" number="9.2.15.7">
+<h4><span class="header-section-number">9.2.15.7</span> Infección y ola<a href="regresiones-logísticas.html#infección-y-ola-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb694"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb694-1"><a href="regresiones-logísticas.html#cb694-1" tabindex="-1"></a>mod.COVID<span class="ot">=</span><span class="fu">glm</span>(UCIN<span class="sc">~</span>SegundOla<span class="sc">+</span>PesosP<span class="sc">+</span>Prematuro<span class="sc">+</span>AnCon<span class="sc">+</span>RetrasoCF<span class="sc">+</span>GM<span class="sc">+</span>APGAR,<span class="at">data=</span>DFL.niños[DFL.niños<span class="sc">$</span>COVID<span class="sc">==</span><span class="dv">1</span>,],<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb694-2"><a href="regresiones-logísticas.html#cb694-2" tabindex="-1"></a>DFOR<span class="ot">=</span><span class="fu">or_model_summary</span>(<span class="at">round_p=</span><span class="dv">8</span>,<span class="at">model =</span> mod.COVID)</span>
+<span id="cb694-3"><a href="regresiones-logísticas.html#cb694-3" tabindex="-1"></a></span>
+<span id="cb694-4"><a href="regresiones-logísticas.html#cb694-4" tabindex="-1"></a><span class="fu">rownames</span>(DFOR)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Término Indep&quot;</span>,</span>
+<span id="cb694-5"><a href="regresiones-logísticas.html#cb694-5" tabindex="-1"></a>                 <span class="st">&quot;Infectadas 2a ola rel infectadas a 1a ola&quot;</span>,</span>
+<span id="cb694-6"><a href="regresiones-logísticas.html#cb694-6" tabindex="-1"></a>                 <span class="st">&quot;Bajo peso&quot;</span>,</span>
+<span id="cb694-7"><a href="regresiones-logísticas.html#cb694-7" tabindex="-1"></a>                 <span class="st">&quot;Prematuridad&quot;</span>,</span>
+<span id="cb694-8"><a href="regresiones-logísticas.html#cb694-8" tabindex="-1"></a>                 <span class="st">&quot;Anomalías congénitas&quot;</span>,</span>
+<span id="cb694-9"><a href="regresiones-logísticas.html#cb694-9" tabindex="-1"></a>                 <span class="st">&quot;RCIU&quot;</span>,</span>
+<span id="cb694-10"><a href="regresiones-logísticas.html#cb694-10" tabindex="-1"></a>                 <span class="st">&quot;Gestación múltiple&quot;</span>,</span>
+<span id="cb694-11"><a href="regresiones-logísticas.html#cb694-11" tabindex="-1"></a>                 <span class="st">&quot;Apgar≤7&quot;</span></span>
+<span id="cb694-12"><a href="regresiones-logísticas.html#cb694-12" tabindex="-1"></a>                  )</span>
+<span id="cb694-13"><a href="regresiones-logísticas.html#cb694-13" tabindex="-1"></a><span class="fu">colnames</span>(DFOR)<span class="ot">=</span>Columnes.OR</span>
+<span id="cb694-14"><a href="regresiones-logísticas.html#cb694-14" tabindex="-1"></a></span>
+<span id="cb694-15"><a href="regresiones-logísticas.html#cb694-15" tabindex="-1"></a>DFOR[<span class="sc">-</span><span class="dv">1</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb694-16"><a href="regresiones-logísticas.html#cb694-16" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb694-17"><a href="regresiones-logísticas.html#cb694-17" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+ORa
+</th>
+<th style="text-align:right;">
+IC 95%: extremo inf.
+</th>
+<th style="text-align:right;">
+IC 95%: extremo sup.
+</th>
+<th style="text-align:left;">
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Infectadas 2a ola rel infectadas a 1a ola
+</td>
+<td style="text-align:right;">
+0.760
+</td>
+<td style="text-align:right;">
+0.491
+</td>
+<td style="text-align:right;">
+1.175
+</td>
+<td style="text-align:left;">
+0.21663953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bajo peso
+</td>
+<td style="text-align:right;">
+4.207
+</td>
+<td style="text-align:right;">
+2.197
+</td>
+<td style="text-align:right;">
+8.057
+</td>
+<td style="text-align:left;">
+1.462e-05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prematuridad
+</td>
+<td style="text-align:right;">
+7.981
+</td>
+<td style="text-align:right;">
+4.347
+</td>
+<td style="text-align:right;">
+14.652
+</td>
+<td style="text-align:left;">
+&lt;1e-08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anomalías congénitas
+</td>
+<td style="text-align:right;">
+12.680
+</td>
+<td style="text-align:right;">
+4.971
+</td>
+<td style="text-align:right;">
+32.349
+</td>
+<td style="text-align:left;">
+1.1e-07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCIU
+</td>
+<td style="text-align:right;">
+1.597
+</td>
+<td style="text-align:right;">
+0.705
+</td>
+<td style="text-align:right;">
+3.620
+</td>
+<td style="text-align:left;">
+0.26186573
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gestación múltiple
+</td>
+<td style="text-align:right;">
+0.488
+</td>
+<td style="text-align:right;">
+0.209
+</td>
+<td style="text-align:right;">
+1.140
+</td>
+<td style="text-align:left;">
+0.09763073
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apgar≤7
+</td>
+<td style="text-align:right;">
+0.074
+</td>
+<td style="text-align:right;">
+0.029
+</td>
+<td style="text-align:right;">
+0.189
+</td>
+<td style="text-align:left;">
+5e-08
 </td>
 </tr>
 </tbody>
