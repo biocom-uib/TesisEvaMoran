@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.19" data-path="descripción-de-la-muestra-global.html"><a href="descripción-de-la-muestra-global.html#peso-de-neonatos-al-nacimiento"><i class="fa fa-check"></i><b>1.2.19</b> Peso de neonatos al nacimiento</a></li>
 <li class="chapter" data-level="1.2.20" data-path="descripción-de-la-muestra-global.html"><a href="descripción-de-la-muestra-global.html#apgar"><i class="fa fa-check"></i><b>1.2.20</b> Apgar</a></li>
 <li class="chapter" data-level="1.2.21" data-path="descripción-de-la-muestra-global.html"><a href="descripción-de-la-muestra-global.html#ingreso-de-neonatos-vivos-en-ucin"><i class="fa fa-check"></i><b>1.2.21</b> Ingreso de neonatos vivos en UCIN</a></li>
+<li class="chapter" data-level="1.2.22" data-path="descripción-de-la-muestra-global.html"><a href="descripción-de-la-muestra-global.html#otros"><i class="fa fa-check"></i><b>1.2.22</b> Otros</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="descripción-de-la-muestra-de-casos-según-sintomatología.html"><a href="descripción-de-la-muestra-de-casos-según-sintomatología.html"><i class="fa fa-check"></i><b>2</b> Descripción de la muestra de casos según sintomatología</a>
@@ -6002,7 +6003,35 @@ Datos perdidos
 </tbody>
 </table>
 </div>
+</div>
+<div id="otros" class="section level3 hasAnchor" number="1.2.22">
+<h3><span class="header-section-number">1.2.22</span> Otros<a href="descripción-de-la-muestra-global.html#otros" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="relación-entre-cesárea-y-obesidad-en-infectadas" class="section level4 hasAnchor" number="1.2.22.1">
+<h4><span class="header-section-number">1.2.22.1</span> Relación entre cesárea y obesidad en infectadas<a href="descripción-de-la-muestra-global.html#relación-entre-cesárea-y-obesidad-en-infectadas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="descripción-de-la-muestra-global.html#cb73-1" tabindex="-1"></a>EE<span class="ot">=</span><span class="fu">table</span>(Casos<span class="sc">$</span>Obesidad,Casos<span class="sc">$</span>Cesárea)[<span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>]</span>
+<span id="cb73-2"><a href="descripción-de-la-muestra-global.html#cb73-2" tabindex="-1"></a><span class="fu">fisher.test</span>(EE)</span></code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  EE
+## p-value = 7.028e-05
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  1.312108 2.272104
+## sample estimates:
+## odds ratio 
+##   1.729206</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="descripción-de-la-muestra-global.html#cb75-1" tabindex="-1"></a>PT<span class="ot">=</span><span class="fu">prop.test</span>(EE[,<span class="dv">1</span>],<span class="fu">rowSums</span>(EE))</span>
+<span id="cb75-2"><a href="descripción-de-la-muestra-global.html#cb75-2" tabindex="-1"></a>RA<span class="ot">=</span><span class="fu">round</span>(PT<span class="sc">$</span>estimate[<span class="dv">1</span>]<span class="sc">-</span>PT<span class="sc">$</span>estimate[<span class="dv">2</span>],<span class="dv">4</span>)</span>
+<span id="cb75-3"><a href="descripción-de-la-muestra-global.html#cb75-3" tabindex="-1"></a>ICRA<span class="ot">=</span><span class="fu">round</span>(PT<span class="sc">$</span>conf.int,<span class="dv">4</span>)</span>
+<span id="cb75-4"><a href="descripción-de-la-muestra-global.html#cb75-4" tabindex="-1"></a>RR<span class="ot">=</span><span class="fu">round</span>(PT<span class="sc">$</span>estimate[<span class="dv">1</span>]<span class="sc">/</span>PT<span class="sc">$</span>estimate[<span class="dv">2</span>],<span class="dv">2</span>)</span>
+<span id="cb75-5"><a href="descripción-de-la-muestra-global.html#cb75-5" tabindex="-1"></a>ICRR<span class="ot">=</span><span class="fu">round</span>(<span class="fu">RelRisk</span>(EE,<span class="at">conf.level=</span><span class="fl">0.95</span>,<span class="at">method=</span><span class="st">&quot;score&quot;</span>)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>],<span class="dv">2</span>)</span></code></pre></div>
+<ul>
+<li>RA: 0.1135, IC 95% 0.0532, 0.1737</li>
+<li>RR: 1.47, IC 95% 1.23, 1.75</li>
+</ul>
 
+</div>
 </div>
 </div>
 </div>
